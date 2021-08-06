@@ -1,0 +1,11 @@
+console.count();
+console.count("a");
+console.count("b");
+console.count("a");
+console.count("a");
+console.count();
+console.count();
+console.count();
+console.count("b");
+//console.countReset
+console.countReset();
