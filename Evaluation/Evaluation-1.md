@@ -79,6 +79,7 @@
    hello
    string is reversed :olleh
    ```
+another method:
 
    ```javascript
       //reverse a string
@@ -101,7 +102,7 @@
    string is reversed :gninrom doog
    ```
 
-## 5.How would you reverse words in a sentence? 
+## 4.How would you reverse words in a sentence? 
 
    Using split and reverse,join function to reverse words in a sentence
 
@@ -132,7 +133,7 @@
    console.log("before reverse sentence :"+string);       //before reverse sentence :good morning
    console.log("after reverse sentence :"+result);       //after reverse sentence :morning good  
    ```     
-### 6.How will you verify a word as a palindrome?
+### 5.How will you verify a word as a palindrome?
 
    ```javascript
    var string="malayalam";
