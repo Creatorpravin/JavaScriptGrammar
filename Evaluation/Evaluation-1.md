@@ -285,6 +285,31 @@
 ### a. ({id: 1, name: “edison”}, {id: 1, name: “edison”})
 ### b. ({id: 1, name: “edison”}, {id: 2, name: “edison”})
 
+```javascript
+var a={id: 1, name: "edison"},b={id: 1, name: "edison"};
+var c={id: 1, name: "edison"}, d={id: 2, name: "edison"};
+console.log(objcmp(a,b));     //true
+console.log(objcmp(c,d));     //false
+
+function objcmp(x,y){
+    let A=Object.getOwnPropertyNames(x);
+    let B=Object.getOwnPropertyNames(y);
+    if(A.length!=B.length)
+      return false;
+    for(let i=0;i<A.length;i++){
+         let propName=A[i];
+         if(x[propName]!==y[propName])
+           return false;
+     } 
+     return true;
+}
+```
+output
+```
+true
+false
+```
+
 
 ### 14.Take a multidimensional array and flat the array?[1,4,2,3,[10,20,20], [100,500,700,600],[2000,1000]]
 
