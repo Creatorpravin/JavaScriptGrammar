@@ -102,7 +102,7 @@ another method:
    string is reversed :gninrom doog
    ```
 
-## 4.How would you reverse words in a sentence? 
+### 4.How would you reverse words in a sentence? 
 
    Using split and reverse,join function to reverse words in a sentence
 
