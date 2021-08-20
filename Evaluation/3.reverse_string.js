@@ -10,7 +10,7 @@ function reverseString(str) {
     // return the reversed string
     return joinArray;
 }
-var result = reverseString(string);
+var result1 = reverseString(string);
 console.log(string);
 console.log("string is reversed :"+result);
 
@@ -23,6 +23,6 @@ function reverse(str) {
     }
     return reversedString;
 }
-var result = reverseString(string1);
+var result1 = reverse(string1);
 console.log(string1);
-console.log("string is reversed :"+result);
+console.log("string is reversed :"+result1);
