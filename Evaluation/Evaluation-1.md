@@ -91,9 +91,9 @@ another method:
          }
          return reversedString;
       }
-      var result = reverseString(string1);
+      var result1 = reverse(string1);
       console.log(string1);
-      console.log("string is reversed :"+result);
+      console.log("string is reversed :"+result1);
    ```
 
    output:
