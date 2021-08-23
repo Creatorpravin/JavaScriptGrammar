@@ -366,16 +366,16 @@ step 5: stop
 
 ### pseudocode:
 ```
-var users=[
+ users=[
     {id: 1, name: 'edison' }, 
     {id: 2, name: 'Annand' }, 
     {id: 3, name: 'Vasnath'}
 ];
-var groupByid = users.reduce((acc, index) => {
+ groupByid = users.reduce((acc, index) => {
     acc[index.id] = acc[index.id] + 1 || 1;
-    return acc;
+    RETURN acc;
   }, {});
-print (groupByid)
+PRINT (groupByid)
 ```
 ## 17. Write a program in Javascript to make such a pattern like right angle triangle with number increased by 1
 ### algorithm:
