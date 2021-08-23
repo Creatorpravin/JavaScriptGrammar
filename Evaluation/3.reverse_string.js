@@ -1,5 +1,8 @@
 //reverse a string using in-build type
-var string="good morning";
+var string="hello";
+var result = reverseString(string);
+console.log(string);
+console.log("string is reversed :"+result);
 function reverseString(str) {
     // return a new array of strings
     var arrayStrings = str.split("");
@@ -10,12 +13,12 @@ function reverseString(str) {
     // return the reversed string
     return joinArray;
 }
-var result1 = reverseString(string);
-console.log(string);
-console.log("string is reversed :"+result);
 
 //reverse a string
-var string1="good morning";
+ string="good morning";
+ result = reverse(string);
+console.log(string);
+console.log("string is reversed :"+result);
 function reverse(str) {
     let reversedString="";
     for(let i=str.length-1;i>=0;i--){
@@ -23,6 +26,3 @@ function reverse(str) {
     }
     return reversedString;
 }
-var result1 = reverse(string1);
-console.log(string1);
-console.log("string is reversed :"+result1);

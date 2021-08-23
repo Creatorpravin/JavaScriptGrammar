@@ -8,8 +8,12 @@
    if(number===1){
       console.log(number+" is prime");
    }
+   // check if number is less than 1
+   else if(number<1){
+      console.log("Zero and Negative value is not accept");
+   }  
    // check if number is greater than 1
-   else if(number>1){
+   else{
       // looping through 2 to number-1
    for (let i = 2; i < number; i++){
       if (number % i == 0) {
@@ -22,11 +26,7 @@
    }else{
       console.log(number + " is not prime");
    }
-   }
-   // check if number is less than 1
-   else if(number<1){
-      console.log("Zero and Negative value is not accept");
-   }    
+   }  
    ```   
    output:
    ```
@@ -59,6 +59,10 @@
    ```javascript
     //reverse a string using in-build type
       var string="hello";
+      var result = reverseString(string);
+      console.log(string);
+      console.log("string is reversed :"+result);
+
       function reverseString(str) {
          // return a new array of strings
          var arrayStrings = str.split("");
@@ -69,9 +73,6 @@
          // return the reversed string
          return joinArray;
       }
-      var result = reverseString(string);
-      console.log(string);
-      console.log("string is reversed :"+result);
    ```
 
    output:
@@ -83,7 +84,11 @@ another method:
 
    ```javascript
       //reverse a string
-      var string1="good morning";
+       string="good morning";
+       result = reverse(string);
+      console.log(string);
+      console.log("string is reversed :"+result);
+
       function reverse(str) {
          let reversedString="";
          for(let i=str.length-1;i>=0;i--){
@@ -91,9 +96,6 @@ another method:
          }
          return reversedString;
       }
-      var result1 = reverse(string1);
-      console.log(string1);
-      console.log("string is reversed :"+result1);
    ```
 
    output:
@@ -110,9 +112,9 @@ another method:
    //using in-build function
    var str  = "sample string";
    console.log("before reverse sentence :"+str);  //before reverse sentence :sample string
-   var arr = str.split(" ");
-   arr.reverse();
-   str = arr.join(" ");
+   str = str.split(" ");
+   str.reverse();
+   str = str.join(" ");
    console.log("after reverse sentence :"+str);       //after reverse sentence :string sample
    ```
 
@@ -120,7 +122,10 @@ another method:
 
    ```javascript
    //reverse sentence word
-   var string="good morning"
+   str="good morning"
+   var result=reverse_sentence(str);
+   console.log("before reverse sentence :"+str);       //before reverse sentence :good morning
+   console.log("after reverse sentence :"+result);       //after reverse sentence :morning good  
    function reverse_sentence(str){
       var sentence="";
       var wordArray=str.split(" ");
@@ -129,9 +134,6 @@ another method:
       }
       return sentence;
    }
-   var result=reverse_sentence(string);
-   console.log("before reverse sentence :"+string);       //before reverse sentence :good morning
-   console.log("after reverse sentence :"+result);       //after reverse sentence :morning good  
    ```     
 ### 5.How will you verify a word as a palindrome?
 
@@ -248,7 +250,7 @@ another method:
 
    ```javascript
    var odd=0,even=0;
-   for(let i=0;i<=100;i++){
+   for(let i=1;i<=100;i++){
       if(i%2==0)
          even +=i;
       else
@@ -274,10 +276,10 @@ another method:
    console.log(merge);     //[1, 2, 9, 3, 5, 1, 4, 5, 11, 54, 70, 40]
 
    //concat method
-   var array3=[1,2,9,3,5,1,4,5];
-   var array4=[11,54,70,40];
-   var merge1=array3.concat(array4);
-   console.log(merge1);    //[1, 2, 9, 3, 5, 1, 4, 5, 11, 54, 70, 40]
+    array1=[10,20,90,30,5,1,4,5];
+    array2=[11,54,70,40];
+    merge=array1.concat(array2);
+   console.log(merge);    //[10, 20, 90, 30, 5, 1, 4, 5, 11, 54, 70, 40]
   ```   
 
 ### 12. Remove duplicate from an array of an object by id and name? a. [{id: 1, name: ‘Stephen covey’ }, {id: 2, name: ‘Robin Sharma’ }, {id: 3, name:‘Tolstoy’}, {id: 3, name: ‘Tolstoy’}, {id: 5, name: ‘James clear’}]   

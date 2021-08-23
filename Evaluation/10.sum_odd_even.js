@@ -1,5 +1,5 @@
 var odd=0,even=0;
-for(let i=0;i<=100;i++){
+for(let i=1;i<=100;i++){
     if(i%2==0)
         even +=i;
     else
