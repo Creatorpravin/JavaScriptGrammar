@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>event callbacks</title>
+        <script>
+            //create an arrow function that outputs some info
+            function classic(event){
+            console.log("hello,i am an classic ES5 function");
+            console.log(this);
+        }
+        //attach an ES5 function to an event listener on document
+        document.addEventListener("click",classic);
+        </script>
+    </head>
+    <body>
+        <h1>click me!</h1>
+    </body>
+</html>

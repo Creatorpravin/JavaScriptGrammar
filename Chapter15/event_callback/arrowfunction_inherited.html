@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Inherited this Context</title>
+        <script>
+        function classic(){
+            let b=()=>{
+                console.log("hello,i am arraow function b()");
+                console.log(this);
+            }
+            document.addEventListener("click",b);
+        }
+        let object =new classic();
+        </script>
+    </head>
+    <body>
+        <h3>click me!</h3>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>event callbacks</title>
+        <script>
+            //create an arrow function that outputs some info
+            let arrow=(event)=>{
+                console.log("hello,i am an arrow function");
+                console.log(this);
+            }
+            //attach arrow function to an event listener on document
+            document.addEventListener("click",arrow);
+        </script>
+    </head>
+    <body>
+        <h1>click Me!</h1>
+    </body>
+</html>
