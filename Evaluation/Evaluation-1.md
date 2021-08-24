@@ -346,9 +346,6 @@ false
 
    ```javascript
    var arr=[1,4,2,3,[10,20,20], [100,500,700,600],[2000,1000]];
-   var temp=[];
-   let flat =temp.concat(...arr);
-   console.log(flat);   //[1, 4, 2, 3, 10, 20, 20, 100, 500, 700, 600, 2000, 1000]
    //using flat()
    console.log(arr.flat());  //[1, 4, 2, 3, 10, 20, 20, 100, 500, 700, 600, 2000, 1000]
    ```
@@ -543,7 +540,7 @@ output:
    If you want to take a look at all object’s properties and methods, you can print it out directly into the console using console.dir method.
 
   ```javascript
-    let x = { property: 1, prop1: 2, method: function(){}};
+    x = { property: 1, prop1: 2, method: function(){}};
     console.dir(x);
     console.dir("hello");  //hello
   ```

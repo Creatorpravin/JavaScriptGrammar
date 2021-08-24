@@ -9,7 +9,7 @@ console.log("object="+obj);  //object=[object Object]
 console.log(`${obj}`);       //[object Object]
 
 //console.dir
-let x = { property: 1, prop1: 2, method: function(){}};
+x = { property: 1, prop1: 2, method: function(){}};
 console.dir(x);       
 console.dir("hello"); //hello
 
