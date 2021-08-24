@@ -1,3 +1,4 @@
+"use strict";
 //console.log
 let x = { property: 1, prop1: 2, method: function(){}};
 console.log(x);              //{property: 1, prop1: 2, method: ƒ}

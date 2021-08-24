@@ -1,8 +1,14 @@
+"use strict";
 //reverse a string using in-build type
 var string="hello";
-var result = reverseString(string);
-console.log(string);
-console.log("string is reversed :"+result);
+var type=typeof string;
+if(type==="string"){
+    var result = reverseString(string);
+    console.log(string);
+    console.log("string is reversed :"+result);
+}else{
+    console.log("this is not string!");
+}
 function reverseString(str) {
     // return a new array of strings
     var arrayStrings = str.split("");
@@ -15,10 +21,15 @@ function reverseString(str) {
 }
 
 //reverse a string
- string="good morning";
- result = reverse(string);
-console.log(string);
-console.log("string is reversed :"+result);
+string="good morning";
+type=typeof string;
+if(type==="string"){
+    result = reverse(string);
+    console.log(string);
+    console.log("string is reversed :"+result);
+}else{
+    console.log("this is not string!");
+}
 function reverse(str) {
     let reversedString="";
     for(let i=str.length-1;i>=0;i--){

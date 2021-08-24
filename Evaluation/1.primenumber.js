@@ -1,25 +1,30 @@
-var number=17,flag=true;
-   // check if number is equal to 1
-   if(number===1){
+"use strict";
+var number=17;
+var flag=true;
+var type=typeof number;
+// check if type of value is number or not 
+if(type==="number"){
+   // check if number is equal to 2
+   if(number===2){
       console.log(number+" is prime");
    }
-   // check if number is less than 1
-   else if(number<1){
-      console.log("Zero and Negative value is not accept");
+   // check if number is less than 2
+   else if(number<2){
+      console.log("This value is not accept");
    }    
-   // check if number is greater than 1
+   // check if number is greater than 2
    else{
       // looping through 2 to number-1
-   for (let i = 2; i < number; i++){
-      if (number % i == 0) {
-         flag = false;
-         break;
-      }
-   }     
-   if (flag){
-      console.log(number + " is prime");
-   }else{
-      console.log(number + " is not prime");
+      for (let i = 2; i < number; i++){
+         if (number % i == 0) {
+            flag = false;
+            break;
+         }
+      } 
+      console.log((flag)?number+" is prime":number+" is not prime");  
    }
-   }
+}
+else{
+   console.log("this is not number");
+}
    

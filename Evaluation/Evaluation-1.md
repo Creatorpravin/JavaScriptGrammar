@@ -3,30 +3,35 @@
   A prime number is a positive integer that is only divisible by 1 and itself.
 
    ```javascript
-   var number=17,flag=true;
-   // check if number is equal to 1
-   if(number===1){
-      console.log(number+" is prime");
-   }
-   // check if number is less than 1
-   else if(number<1){
-      console.log("Zero and Negative value is not accept");
-   }  
-   // check if number is greater than 1
-   else{
-      // looping through 2 to number-1
-   for (let i = 2; i < number; i++){
-      if (number % i == 0) {
-         flag = false;
-         break;
+   "use strict";
+   var number=17;
+   var flag=true;
+   var type=typeof number;
+   // check if type of value is number or not 
+   if(type==="number"){
+      // check if number is equal to 2
+      if(number===2){
+         console.log(number+" is prime");
       }
-   }     
-   if (flag == true){
-      console.log(number + " is prime");
-   }else{
-      console.log(number + " is not prime");
+      // check if number is less than 2
+      else if(number<2){
+         console.log("This value is not accept");
+      }    
+      // check if number is greater than 2
+      else{
+         // looping through 2 to number-1
+         for (let i = 2; i < number; i++){
+            if (number % i == 0) {
+               flag = false;
+               break;
+            }
+         } 
+         console.log((flag)?number+" is prime":number+" is not prime");  
+      }
    }
-   }  
+   else{
+      console.log("this is not number");
+   }
    ```   
    output:
    ```
@@ -43,6 +48,7 @@
 
    example:
    ```javascript
+   "use strict";
    console.log(0==false);  //true, because false is equivalent of 0
    console.log(0===false);  //false, because both operands are of different type
    console.log(2=="2");  //true, auto type coercion,string converted into number
@@ -57,12 +63,17 @@
    The reversed string elements are joined into a single string using the join() method. reverseArray.join("") gives olleh. 
 
    ```javascript
-    //reverse a string using in-build type
+      "use strict";
+      //reverse a string using in-build type
       var string="hello";
-      var result = reverseString(string);
-      console.log(string);
-      console.log("string is reversed :"+result);
-
+      var type=typeof string;
+      if(type==="string"){
+         var result = reverseString(string);
+         console.log(string);
+         console.log("string is reversed :"+result);
+      }else{
+         console.log("this is not string!");
+      }
       function reverseString(str) {
          // return a new array of strings
          var arrayStrings = str.split("");
@@ -83,12 +94,17 @@
 another method:
 
    ```javascript
+      "use strict";
       //reverse a string
-       string="good morning";
-       result = reverse(string);
-      console.log(string);
-      console.log("string is reversed :"+result);
-
+      string="good morning";
+      type=typeof string;
+      if(type==="string"){
+         result = reverse(string);
+         console.log(string);
+         console.log("string is reversed :"+result);
+      }else{
+         console.log("this is not string!");
+      }
       function reverse(str) {
          let reversedString="";
          for(let i=str.length-1;i>=0;i--){
@@ -109,23 +125,35 @@ another method:
    Using split and reverse,join function to reverse words in a sentence
 
    ```javascript
+   "use strict";
    //using in-build function
    var str  = "sample string";
-   console.log("before reverse sentence :"+str);  //before reverse sentence :sample string
-   str = str.split(" ");
-   str.reverse();
-   str = str.join(" ");
-   console.log("after reverse sentence :"+str);       //after reverse sentence :string sample
+   var type=typeof str;
+   if(type==="string"){
+      console.log("before reverse sentence :"+str);  //before reverse sentence :sample string
+      str = str.split(" ");
+      str.reverse();
+      str = str.join(" ");
+      console.log("after reverse sentence :"+str);;       //after reverse sentence :string sample
+   }else{
+      console.log("this is not string!");
+   }
    ```
 
    Another method to reverse words in a sentence.
 
    ```javascript
+   "use strict";
    //reverse sentence word
-   str="good morning"
+   str="good morning";
+   type=typeof str;
+   if(type==="string"){
    var result=reverse_sentence(str);
    console.log("before reverse sentence :"+str);       //before reverse sentence :good morning
-   console.log("after reverse sentence :"+result);       //after reverse sentence :morning good  
+   console.log("after reverse sentence :"+result);;       //after reverse sentence :morning good 
+   }else{
+      console.log("this is not string!");
+   } 
    function reverse_sentence(str){
       var sentence="";
       var wordArray=str.split(" ");
@@ -138,18 +166,21 @@ another method:
 ### 5.How will you verify a word as a palindrome?
 
    ```javascript
+   "use strict";
    var string="malayalam";
+   var type=typeof string;
+   if(type==="string"){
+      var result = reverseString(string);
+      console.log((result==string)?"given string is palindrome":"given string is not palindrome");
+   }
+   else{
+      console.log("this is not string!");
+   }
    function reverseString(str) {
       var arrayStrings = str.split("");
       var reverseArray = arrayStrings.reverse();
       var joinArray = reverseArray.join("");
       return joinArray;
-   }
-   var result = reverseString(string);
-   if(result===string){
-      console.log("given string is palindrome");
-   }else{
-      console.log("given string is not palindrome");  
    }
    ```
 
@@ -167,6 +198,7 @@ another method:
    forEach() is not executed for array elements without values.
 
    ```javascript
+   "use strict";
    //forEach
    var month=["jun","feb","mar","apr"];
    var allMonths="";
@@ -192,6 +224,7 @@ another method:
 
 
    ```javascript
+   "use strict";
    //map
    var number=[10,20,30,40,50];
    var newArray=number.map(function2);
@@ -209,6 +242,7 @@ another method:
   Math.random() used with Math.floor() can be used to return random integers.
 
   ```javascript 
+  "use strict";
   var random=Math.floor(Math.random() * 5)+1;
   console.log(random);
   ```
@@ -228,6 +262,7 @@ another method:
    Then, convert the set back to an array.
 
    ```javascript
+   "use strict";
    var a=[1,2,9,4,5,8,3,5,1,4,5];
    var A=[...new Set(a)];
    console.log(A);   //[1, 2, 9, 4, 5, 8, 3]
@@ -235,6 +270,7 @@ another method:
 ### 9.Write a program to calculate the sum of the first 10 natural numbers.
 
    ```javascript
+   "use strict";
    var sum = 0;
    for (let i = 1;i <= 10;i++) {
       sum += i;
@@ -249,12 +285,14 @@ another method:
 ### 10.Write a program to print the sum of the even and odd numbers for a given number?(100)
 
    ```javascript
+   "use strict";
    var odd=0,even=0;
    for(let i=1;i<=100;i++){
-      if(i%2==0)
+      (i%2==0)?even+=i:odd+=i;
+      /*if(i%2==0)
          even +=i;
       else
-         odd +=i;
+         odd +=i;*/
    }
    console.log("sum of even:",even);  //sum of even: 2550
    console.log("sum of odd:",odd);    //sum of odd: 2500
@@ -269,6 +307,7 @@ another method:
 ### 11.Write a program to merge two arrays? ([1,2,9,3,5,1,4,5], [11,54,70,40])
 
   ```javascript
+  "use strict";
   //using spread merge the array
    var array1=[1,2,9,3,5,1,4,5];
    var array2=[11,54,70,40];
@@ -285,6 +324,7 @@ another method:
 ### 12. Remove duplicate from an array of an object by id and name? a. [{id: 1, name: ‘Stephen covey’ }, {id: 2, name: ‘Robin Sharma’ }, {id: 3, name:‘Tolstoy’}, {id: 3, name: ‘Tolstoy’}, {id: 5, name: ‘James clear’}]   
 
 ```javascript
+"use strict";
 var x = new Set();
 var array = [
     {id: 1, name: 'Stephen covey'},
@@ -315,6 +355,7 @@ output:
 ### b. ({id: 1, name: “edison”}, {id: 2, name: “edison”})
 
 ```javascript
+"use strict";
 var a={id: 1, name: "edison"},b={id: 1, name: "edison"};
 var c={id: 1, name: "edison"}, d={id: 2, name: "edison"};
 console.log(objcmp(a,b));     //true
@@ -345,6 +386,7 @@ false
    The flat() method is an inbuilt array method that flattens a given array into a newly created one-dimensional array. It concatenates all the elements of the given multidimensional array, and flats upto the specified depth. We can specify the depth limit to where we need to flatten the array. By default, the depth limit is 1.
 
    ```javascript
+   "use strict";
    var arr=[1,4,2,3,[10,20,20], [100,500,700,600],[2000,1000]];
    //using flat()
    console.log(arr.flat());  //[1, 4, 2, 3, 10, 20, 20, 100, 500, 700, 600, 2000, 1000]
@@ -353,6 +395,7 @@ false
 ### 15. Group by the id of the following array of objects using the Array.reduce method? [{id: 1, name: ‘edison’ }, {id: 2, name: ‘Annand’ }, {id: 3, name: ‘Vasnath’}]
 
 ```javascript
+"use strict";
 var users=[
     {id: 1, name: 'edison' }, 
     {id: 2, name: 'Annand' }, 
@@ -379,6 +422,7 @@ output:
    *****
   ```
   ```javascript
+  "use strict";
    function* generator() {
       yield ('*');
       yield ('**');
@@ -406,6 +450,7 @@ output:
 7 8 9 10
 ```
   ```javascript
+  "use strict";
    let value = "";
    let k=1;
    for (let i = 1;i < 5;i++) {
@@ -434,6 +479,7 @@ output:
   7 8 9 10
 ```
  ```javascript
+ "use strict";
    let number = "";
    let a=1;
    for (let i = 1;i<5;i++) {
@@ -470,6 +516,7 @@ output:
 ```
 
    ```javascript
+   "use strict";
    let string = "";
    for (let i = 1;i<=5;i++) {
    for (let j=5;j>i;j--) {
@@ -524,6 +571,7 @@ output:
   The console.log() method writes a message to the console for debugging.
 
   ```javascript
+  "use strict";
   //console.log
    let x = { property: 1, prop1: 2, method: function(){}};
    console.log(x);              //{property: 1, prop1: 2, method: ƒ}
@@ -540,6 +588,7 @@ output:
    If you want to take a look at all object’s properties and methods, you can print it out directly into the console using console.dir method.
 
   ```javascript
+   "use strict";
     x = { property: 1, prop1: 2, method: function(){}};
     console.dir(x);
     console.dir("hello");  //hello
@@ -561,6 +610,7 @@ output:
   You can add a label that will be included in the console view. By default the label "default" will be added.
 
  ```javascript
+   "use strict";
    console.count();       //default: 1
    console.count("a");    //a: 1  
    console.count("b");    //b:1
@@ -593,6 +643,7 @@ The console.table() method writes a table in the console view.
 The first parameter is required, and must be either an object, or an array, containing data to fill the table.
 
    ```javascript
+   "use strict";
    console.table(["Audi", "Volvo", "Ford"]);
    ``` 
    output:
@@ -616,6 +667,7 @@ Use the **console.timeEnd()** method to end the timer and display the result in 
 Use the label parameter to name the timer, then you are able to have many timers on the same page.
 
  ```javascript 
+   "use strict";
    console.time("a");
    let arr=new Array(10000);
    for(let i=0;i<arr.length;i++){
@@ -634,6 +686,7 @@ Use the label parameter to name the timer, then you are able to have many timers
 The console.trace() method displays a trace that show how the code ended up at a certain point.
 
 ```javascript
+"use strict";
 function foo() {
   function bar() {
     console.trace();
@@ -659,6 +712,7 @@ The console.group() method indicates the start of a message group.
 All messages will from now on be written inside this group.
 
 ```javascript
+"use strict";
 console.log("Hello world!");
 console.group();
 console.log("Hello again, this time inside a group!");
@@ -679,6 +733,7 @@ and we are back.
 The console.assert() method writes an error message to the console if the assertion is false. If the assertion is true, nothing happens.
 
 ```javascript
+"use strict";
 //console.assert()
 console.log("print even number");
 const errorMsg = 'this is not even number';

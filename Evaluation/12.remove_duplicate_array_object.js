@@ -1,3 +1,4 @@
+"use strict";
 var x = new Set();
 var array = [
     {id: 1, name: 'Stephen covey'},

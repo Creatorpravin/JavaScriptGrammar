@@ -1,3 +1,4 @@
+"use strict";
 function* generator() {
     yield ('*');
     yield ('**');

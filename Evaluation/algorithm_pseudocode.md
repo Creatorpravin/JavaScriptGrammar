@@ -19,24 +19,26 @@ step 7.1: If remainder of number divide i equals to 0,then flag equal to false. 
 step 8: if flag equal to true print it is prime number.else print
 it is not prime number.
 
-step 9:stop
+step 9: stop
 
 ### pseudocode:
 ```
-INPUT number,flag=true;
-IF number === 1
-   PRINT "prime"
-ELSE IF  number < 1
-   PRINT "Zero and Negative value is not accept"
+INPUT number;
+flag=true;
+type=TYPEOF number;
+IF(type==="number")
+   IF number === 2
+      PRINT "prime"
+   ELSE IF  number < 2
+      PRINT "Zero and Negative value is not accept"
+   ELSE
+     FOR (let i=2;i<number;i++)
+        IF (number % i == 0) 
+         flag = false;
+            break;
+   PRINT (flag)?number+" is prime":number+" is not prime");  
 ELSE
- FOR (let i=0;i<number;i++)
-   IF (number % i == 0) 
-        flag = false;
-          break;
-IF (flag)
-    PRINT "prime"
-ELSE
-    PRINT "Not prime"
+    PRINT "this is not number"      
 ```
 ## 3.How would you reverse a string in JavaScript?
 ### alogorithm:

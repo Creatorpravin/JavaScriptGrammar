@@ -1,9 +1,12 @@
+"use strict";
 var string="malayalam";
-var result = reverseString(string);
-if(result===string){
-    console.log("given string is palindrome");
-}else{
-    console.log("given string is not palindrome");  
+var type=typeof string;
+if(type==="string"){
+    var result = reverseString(string);
+    console.log((result==string)?"given string is palindrome":"given string is not palindrome");
+}
+else{
+    console.log("this is not string!");
 }
 function reverseString(str) {
     var arrayStrings = str.split("");
@@ -14,11 +17,13 @@ function reverseString(str) {
 
 //another type
 string="level";
- result = reverse(string);
-if(result===string){
-    console.log("given string is palindrome");
-}else{
-    console.log("given string is not palindrome");
+type=typeof string;
+if(type==="string"){
+    result = reverse(string);
+    console.log((result==string)?"given string is palindrome":"given string is not palindrome");
+}
+else{
+    console.log("this is not string!");
 }
 function reverse(str) {
     let reversedString="";

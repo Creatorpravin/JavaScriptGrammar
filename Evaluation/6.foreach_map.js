@@ -1,3 +1,4 @@
+"use strict";
 //forEach
 var month=["jun","feb","mar","apr"];
 var allMonths="";
