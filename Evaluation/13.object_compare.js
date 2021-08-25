@@ -1,6 +1,8 @@
 "use strict";
-var a={id: 1, name: "edison"},b={id: 1, name: "edison"};
-var c={id: 1, name: "edison"}, d={id: 2, name: "edison"};
+var a={id: 1, name: "edison"};
+var b={id: 1, name: "edison"};
+var c={id: 1, name: "edison"};
+var d={id: 2, name: "edison"};
 console.log(objcmp(a,b));     //true
 console.log(objcmp(c,d));     //false
 

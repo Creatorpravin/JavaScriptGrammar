@@ -286,7 +286,8 @@ another method:
 
    ```javascript
    "use strict";
-   var odd=0,even=0;
+   var odd=0;
+   var even=0;
    for(let i=1;i<=100;i++){
       (i%2==0)?even+=i:odd+=i;
       /*if(i%2==0)
@@ -356,8 +357,10 @@ output:
 
 ```javascript
 "use strict";
-var a={id: 1, name: "edison"},b={id: 1, name: "edison"};
-var c={id: 1, name: "edison"}, d={id: 2, name: "edison"};
+var a={id: 1, name: "edison"};
+var b={id: 1, name: "edison"};
+var c={id: 1, name: "edison"};
+var d={id: 2, name: "edison"};
 console.log(objcmp(a,b));     //true
 console.log(objcmp(c,d));     //false
 
@@ -479,7 +482,7 @@ output:
   7 8 9 10
 ```
  ```javascript
- "use strict";
+  "use strict";
    let number = "";
    let a=1;
    for (let i = 1;i<5;i++) {

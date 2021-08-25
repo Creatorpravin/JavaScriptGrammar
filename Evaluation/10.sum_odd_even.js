@@ -1,5 +1,6 @@
 "use strict";
-var odd=0,even=0;
+var odd=0;
+var even=0;
 for(let i=1;i<=100;i++){
     (i%2==0)?even+=i:odd+=i;
     /*if(i%2==0)
