@@ -1,6 +1,7 @@
 "use strict";
 var string="malayalam";
 var type=typeof string;
+string=string.toLowerCase();
 if(type==="string"){
     var result = reverseString(string);
     console.log((result==string)?"given string is palindrome":"given string is not palindrome");
@@ -18,6 +19,7 @@ function reverseString(str) {
 //another type
 string="level";
 type=typeof string;
+string=string.toLowerCase();
 if(type==="string"){
     result = reverse(string);
     console.log((result==string)?"given string is palindrome":"given string is not palindrome");

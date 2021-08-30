@@ -2,11 +2,12 @@
 var number=17;
 var flag=true;
 var type=typeof number;
+var convertToString=number+"";
 // check if type of value is number or not 
-if(type==="number"){
+if(type==="number"&&convertToString.indexOf(".")===-1){
    // check if number is equal to 2
-   if(number===2){
-      console.log(number+" is prime");
+   if(number===1){
+      console.log(number+" is not prime");
    }
    // check if number is less than 2
    else if(number<2){

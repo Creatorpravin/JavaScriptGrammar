@@ -1,8 +1,8 @@
 ## 1. Check prime number?
 ### algorithm:
-step 1: initialize strict mode in globally and variable number with input value and type with typeof input and flag = true.
+step 1: initialize strict mode in globally and variable number with input value and type with typeof input and flag = true, convert number to string and assign one variable.
 
-step 2:check type of input equal to number.if it true then go to step 3.else go to step 10
+step 2:check type of input equal to number and number is not a float value.if it true then go to step 3.else go to step 10
 
 step 3: check the condition number equal to 2 .
 
@@ -30,7 +30,8 @@ INIT "use strict";
 number=INPUT
 INIT flag=true;
 SET type=TYPEOF number;
-IF(type==="number") THEN
+INIT convertToString=number+"";
+IF(type==="number"&&convertToString.indexOf(".")===-1) THEN
    IF (number === 2) THEN
       PRINT "prime"
    ELSE IF  (number < 2) THEN
@@ -145,7 +146,7 @@ ENDFUNCTION reverse_sentence
 ```
 ## 5. How will you verify a word as a palindrome?
 ### algorithm:
-step 1: initialize strict mode in globally and  variable string with value and type with typeof input.
+step 1: initialize strict mode in globally and  variable string with value and type with typeof input ,use lowercase in method to input string.
 
 step 2: check type of input equal to string.if it true then go to step 8.else go to step 11.
 
@@ -172,7 +173,8 @@ step 12: stop.
 ### pseudocode:
 ```
 INIT "use strict";
-string=INPUT 
+string=INPUT
+
 SET type=TYPEOF string;
 IF(type==="string") THEN 
    SET result = reverseString(string);
@@ -230,7 +232,7 @@ step 5: using map method call the function and store the value to newArray.
 step 6: display newarray value.
 
 step 7:stop 
-
+### pseudocode:
 **map**
 ```
 INIT "use strict";
@@ -241,6 +243,37 @@ FUNCTION function2(val)
 ENDFUNCTION function2
  
 PRINT (newArray)
+```
+## 7.Generate a random number between 1 to 5
+### algorithm:
+step 1: initialize strict mode in globally and  variable random with math.floor(math.random) function.
+
+step 2: print random value
+
+step 3: stop.
+
+### pseudocode:
+```
+INIT "use strict";
+SET random=Math.floor(Math.random() * 5)+1;
+PRINT (random);
+```
+## 8.Remove duplicate from the following array?
+### algorithm:
+step 1: initialize strict mode in globally and  variable a with input array value.
+
+step 2: initalize another one variable A with assign array inside Set(a) object using new key.
+
+step 3: print A value.
+
+step 4: stop.
+
+### pseudocode:
+```
+INIT "use strict";
+a=INPUT
+INIT A=[...new Set(a)];
+PRINT (A);
 ```
 ## 9.Write a program to calculate the sum of the first 10 natural numbers.
 ### algorithm:
@@ -396,6 +429,21 @@ FUNCTION objcmp(x,y)
    RETURN true;
 ENDFUNCTION objcmp
 ```
+## 14.Take a multidimensional array and flat the array?[1,4,2,3,[10,20,20], [100,500,700,600],[2000,1000]]
+### algorithm:
+step 1: initialize strict mode in globally and  variable arr with array of value.
+
+step 2: using flat method flatten the array.
+
+step 3: print array.
+
+step 4: stop.
+### pseudocode:
+```
+INIT "use strict";
+arr=[1,4,2,3,[10,20,20], [100,500,700,600],[2000,1000]];
+PRINT (arr.flat()); 
+```
 ## 15. Group by the id of the following array of objects using the Array.reduce method? [{id: 1, name: ‘edison’ }, {id: 2, name: ‘Annand’ }, {id: 3, name: ‘Vasnath’}]
 
 ### algorithm:
@@ -420,6 +468,42 @@ SET groupByid = users.reduce((acc, index) => {
   }, {});
 PRINT (groupByid)
 ```
+## 16. Write a program in Javascript to display the pattern like right angle triangle using an asterisk.The pattern like :
+  ```
+   * 
+   ** 
+   *** 
+   **** 
+   *****
+  ```
+  ### algorithm:
+
+  step 1: initialize strict mode in globally.
+
+  step 2: create a function definition for generator.
+
+  step 3: this function sreturn the * using yield .
+
+  step 4: using for of method assign a generator function to value variable.
+
+  step 5: print value.
+
+  step 6: stop.
+
+  ### pseudocode:
+  ```
+  INIT "use strict";
+   FUNCTION* generator() 
+      yield ('*');
+      yield ('**');
+      yield ('***');
+      yield ('****');
+      yield ('*****');
+   ENDFUNCTION
+   FOR(value of generator())
+     PRINT (value); 
+  ```
+ 
 ## 17. Write a program in Javascript to make such a pattern like right angle triangle with number increased by 1
 ### algorithm:
 
