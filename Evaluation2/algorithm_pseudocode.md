@@ -312,9 +312,56 @@ age = current_year - birth_year;
 PRINT (age);
 ```
 ## 11. In the Javascript function, what are the differences between call by value and reference?
+**### call By value**
 ### Algorithm:
+step 1: initialize strict mode in globally and variable `a` with input value.
+
+step 2: initialize `b` variable assig `a` to `b`.
+
+step 3: initialize `c` variable assig `b` to `c`.
+
+step 4: change the input value of `a`.
+
+step 5: print `a`, `b` and `c`;
+
+step 6: stop.
+
 ### Pseudocode:
 ```
+INIT "use strict";
+a = INPUT
+SET b = a;
+SET c = b;
+SET a = INPUT
+PRINT (a);      
+PRINT (b);     
+PRINT (c);     
+```
+**### call By reference**
+
+### Algorithm:
+step 1: initialize strict mode in globally and variable `x` with input value.
+
+step 2: initialize `y` variable assig `x` to `y`.
+
+step 3: initialize `z` variable assig `y` to `z`.
+
+step 4: change the input value of `x`.
+
+step 5: print `x`, `y` and `z`;
+
+step 6: stop.
+
+### Pseudocode:
+```
+INIT "use strict";
+x = INPUT
+SET y = x;
+SET z = y;
+SET x = INPUT
+PRINT (x);      
+PRINT (y);     
+PRINT (z);  
 ```
 ## 12. What is Arity in Javascript? Explain with a real time example.
 ### Algorithm:
