@@ -79,12 +79,12 @@ step 8: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-array1=INPUT
-array2=INPUT
-commonNumber(array1, array2); 
+array1 = INPUT
+array2 = INPUT
+commonNumber (array1, array2); 
 
-FUNCTION commonNumber(array1, array2) 
-    common = []; 
+FUNCTION commonNumber (array1, array2) 
+    SET common = []; 
     FOR (i -> 0 to array1.length-1) 
       FOR (j -> 0 to array2.length-1)
         IF (array1[i] == array2[j]) THEN
@@ -113,10 +113,10 @@ step 6: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-INIT total=0;    
-sum(10);
-FUNCTION sum(x,y=20)
-    total=x+y;
+INIT total = 0;    
+sum (INPUT);
+FUNCTION sum( x, y = INPUT)
+    CALCULATE total = x + y ;
     PRINT (total);
 ENDFUNCTION sum
 ```
@@ -137,12 +137,12 @@ step 6: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-INIT total=0;    
+INIT total = 0;    
 SET sum = FUNCTION(x,y)
-    total=x+y;
+    CALCULATE total = x + y ;
     PRINT (total);
 ENDFUNCTION sum
-sum (10,20);
+sum (INPUT, INPUT);
 ```
 ### Assigning function to a variable
 ### Algorithm:
@@ -161,12 +161,12 @@ step 6: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-INIT total=0;    
-SET multiply = FUNCTION(x,y)
-    total=x+y;
+INIT total = 0;    
+SET multiply = FUNCTION( x, y)
+    CALCULATE total = x + y ;
     PRINT (total);
 ENDFUNCTION multiply
-multiply (10,20);
+multiply (INPUT, INPUT);
 ```
 ## 4. Show an example ofSafegrounding function parameters?
 ### Algorithm:
@@ -214,7 +214,7 @@ step 4: stop.
 ```
 INIT "use strict";
 persons = INPUT
-SET Age = persons.map(person => person*10);
+SET Age = persons.map(person => person * 10);
 PRINT (fullAge);
 ```
 ### reduce
@@ -230,7 +230,7 @@ step 4: stop.
 ```
 INIT "use strict";
 persons = INPUT
-SET Age = persons.reduce((person,next) => person+next);
+SET Age = persons.reduce((person,next) => person + next);
 PRINT (Age);
 ```
 ### filter
@@ -270,12 +270,12 @@ step 7: stop.
 INIT "use strict";
 start = INPUT
 end = INPUT
-zerocounter(start,end);
-FUNCTION zerocounter(s,e)
+zerocounter( start, end);
+FUNCTION zerocounter( s, e)
     INIT count=0;
     FOR (i -> s to e )
-        ind=i+"";
-        IF (ind.indexOf("0")===1) THEN
+        CALCULATE ind=i+"";
+        IF (ind.indexOf("0") === 1) THEN
           INCREMENT count
         ENDIF
     PRINT (count);
@@ -308,7 +308,7 @@ INIT "use strict";
 birth_year = INPUT
 SET year = new Date();
 SET current_year = year.getFullYear();
-age = current_year - birth_year;
+CALCULATE age = current_year - birth_year;
 PRINT (age);
 ```
 ## 11. In the Javascript function, what are the differences between call by value and reference?
@@ -363,26 +363,128 @@ PRINT (x);
 PRINT (y);     
 PRINT (z);  
 ```
+
 ## 12. What is Arity in Javascript? Explain with a real time example.
 ### Algorithm:
+step 1: initialize strict mode in globally.
+
+step 2: create a function definition with name of date.function have day,month and year parameter.
+
+step 3: initialize the arity variable and assign date.length to arity variable.
+
+step 4: print arity.
+
+step 5: stop.
 ### Pseudocode:
 ```
+INIT "use strict";
+SET arity = date.length
+PRINT (arity)
+
+FUNCTION date( day, month, year){
+}
+ENDFUNCTION date
 ```
 ## 13. What is Currying in Javascript? Explain with a real time example.
-## 14. What is ES6?
 ### Algorithm:
+step 1: initialize strict mode in globally.
+
+step 2: create nameless funtion with parameter `length` and assign to volume variable.go to next step. 
+
+step 3: function return another function with parameter `width`.go to next step.
+
+step 4: above function return another function with parameter `height`.go to next step.
+
+step 5: the above function return height * width * length.
+
+step 6: call the volume function with parameter value and print volume of given value. 
+
+step 7: stop.
 ### Pseudocode:
 ```
+INIT "use strict";
+SET volume = FUNCTION (length)
+    RETURN FUNCTION (width) 
+       RETURN FUNCTION (height)
+          RETURN height * width * length;
+       ENDFUNCTION
+    ENDFUNCTION   
+ENDFUNCTION    
+PRINT (volume (INPUT)(INPUT)(INPUT));
 ```
+## 14. What is ES6?
 ## 15. What is an anonymous function? Where do we use it? Why do we need it?
 ### Algorithm:
+step 1: initialize strict mode in globally and variable total = 0.
+
+step 2: create a function definition for multiplication with parameter `x` and `y` and store in multiply variable.
+
+step 3: multiply the `x` and `y` value and store total variable.
+
+step 4: print total.
+
+step 5: call the multiply function with value.
+
+step 6: stop.
+
 ### Pseudocode:
 ```
+INIT "use strict";
+INIT total = 0;    
+SET multiply = FUNCTION( x, y)
+    CALCULATE total = x * y ;
+    PRINT (total);
+ENDFUNCTION multiply
+multiply (INPUT,INPUT);
 ```
 ## 16. List the differences between named function and assigning functions to variable with examples
+**### named function**
 ### Algorithm:
+step 1: initialize strict mode in globally and variable total = 0.
+
+step 2: create a function definition for sum with parameter `x` and `y` and store in sum variable.
+
+step 3: add the `x` and `y` value and store total variable.
+
+step 4: print total.
+
+step 5: call the sum function with value.
+
+step 6: stop.
+
 ### Pseudocode:
 ```
+INIT "use strict";
+INIT total = 0;    
+FUNCTION sum( x, y)
+    CALCULATE total = x + y ;
+    PRINT (total);
+ENDFUNCTION sum
+sum (INPUT,INPUT);
+```
+**### assigning functions to variable**
+### Algorithm:
+step 1: initialize strict mode in globally and variable total = 0.
+
+step 2: create a function definition for multiplication with parameter `x` and `y` and store in multiply variable.
+
+step 3: multiply the `x` and `y` value and store total variable.
+
+step 4: print total.
+
+step 5: call the multiply function with value.
+
+step 6: stop.
+
+### Pseudocode:
+```
+INIT "use strict";
+INIT total = 0;    
+SET multiply = FUNCTION( x, y)
+    CALCULATE total = x * y ;
+    PRINT (total);
+ENDFUNCTION multiply
+multiply (INPUT,INPUT);
 ```
 
     
