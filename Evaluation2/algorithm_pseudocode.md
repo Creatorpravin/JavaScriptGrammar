@@ -66,11 +66,11 @@ step 2: create a function definition for commonNumber.
 
 step 3: initialize the empty array with variablename of common.
 
-step 4: create for loop and initialize variable i equal to 0.loop execute until i < array1.length.go to next step.
+step 4: create for loop and initialize variable i equal to 0. loop execute until i < array1.length. go to next step.
 
-step 5: create for loop and initialize variable j equal to 0.loop execute until j < array2.length.go to next step.
+step 5: create for loop and initialize variable j equal to 0. loop execute until j < array2.length. go to next step.
 
-step 6: check the array1 value equal to array 2.if it is true then push the array1 value to common variable.execute until to loop condition false.once false go to step 7.
+step 6: check the array1 value equal to array 2. if it is true then push the array1 value to common variable. execute until to loop condition false. once false go to step 7.
 
 step 7: print common variable.
 
@@ -96,7 +96,7 @@ FUNCTION commonNumber (array1, array2)
 FUNCTIONEND commonNumber
 ```
 ## 3. Explain about function Anatomy, Anonymous function and Assigning function to a variable with an example?
-### Function Anatomy
+### **Function Anatomy**
 ### Algorithm:
 step 1: initialize strict mode in globally and variable total = 0.
 
@@ -120,7 +120,7 @@ FUNCTION sum( x, y = INPUT)
     PRINT (total);
 ENDFUNCTION sum
 ```
-### Anonymous function
+### **Anonymous function**
 ### Algorithm:
 step 1: initialize strict mode in globally and variable total = 0.
 
@@ -144,7 +144,7 @@ SET sum = FUNCTION(x,y)
 ENDFUNCTION sum
 sum (INPUT, INPUT);
 ```
-### Assigning function to a variable
+### **Assigning function to a variable**
 ### Algorithm:
 step 1: initialize strict mode in globally and variable total = 0.
 
@@ -169,6 +169,7 @@ ENDFUNCTION multiply
 multiply (INPUT, INPUT);
 ```
 ## 4. Show an example ofSafegrounding function parameters?
+
 ### Algorithm:
 
 step 1: initialize strict mode in globally and empty array stored variable array,function stored in variable Function.
@@ -180,6 +181,7 @@ step 3: check the type of parameter value.if it is function then execute that fu
 step 4: print this ia not function message.
 
 step 5: stop.
+
 ### Pseudocode:
 ```
 INIT "use strict";
@@ -192,16 +194,77 @@ ENDFUNCTION myfunction
 ```
 ## 5. Explain `this` keyword with an example?
 ### Algorithm:
+step 1: initialize strict mode in globally.
+
+step 2: intialize obj variable and assign  id,name and function property with value to obj variable.go to next step. 
+
+step 3: call the function use obj variable.
+
+step 4: using this keyword function property display id.
+
+stop 5: stop.
+
 ### Pseudocode:
 ```
+INIT "use strict";
+SET obj={
+    id:INPUT,
+    name:INPUT,
+    f:function()
+        PRINT (this.id);
+    ENDFUNCTION
+};
+obj.f();
 ```
 ## 6. How ‘this’ inside the function and class?
+
+### **‘this’ inside the function**
+
 ### Algorithm:
+step 1: initialize strict mode in globally.
+
+step 2: create function definition for return `this` and assign function to exampleFunction variable.
+
+step 3: initialize obj varaible and assign exampleFunction function with new keyword.
+
+step 4: print the obj variable.
+
+step 5: stop.
+
 ### Pseudocode:
 ```
+INIT "use strict";
+SET exampleFunction = FUNCTION () 
+        RETURN this;
+    ENDFUNCTION
+SET obj = new exampleFunction();
+PRINT(obj);
+```
+### **‘this’ inside the class**
+### Algorithm:
+step 1: initialize strict mode in globally.
+
+step 2: create class and constructor for return `this` and assign function to exampleClass variable.
+
+step 3: initialize obj varaible and assign exampleClass class with new keyword.
+
+step 4: print the obj variable.
+
+step 5: stop.
+
+### Pseudocode:
+```
+INIT "use strict";
+SET exampleClass = CLASS THEN
+    CONSTRUCTOR()  
+        RETURN this;
+    ENDCONSTRUCTOR
+ENDCLASS   
+SET obj = new exampleClass();
+PRINT (obj);
 ```
 ## 7. Difference between map, reduce and filter methods? With an example
-### map
+### **map**
 ### Algorithm:
 step 1: initialize strict mode in globally and array with input value stored variable persons.
 
@@ -217,7 +280,7 @@ persons = INPUT
 SET Age = persons.map(person => person * 10);
 PRINT (fullAge);
 ```
-### reduce
+### **reduce**
 ### Algorithm:
 step 1: initialize strict mode in globally and array with input value stored variable persons.
 
@@ -233,7 +296,7 @@ persons = INPUT
 SET Age = persons.reduce((person,next) => person + next);
 PRINT (Age);
 ```
-### filter
+### **filter**
 ### Algorithm:
 step 1: initialize strict mode in globally and array with input value stored variable persons.
 
@@ -284,9 +347,34 @@ ENDFUNCTION  zerocounter
 ```
 ## 9. The following array of numbers show the missing number? ([1,2,3,5,6])
 ### Algorithm:
+step 1: initialize strict mode in globally and variable array with input values.
+
+step 2: find the maximum value of array and store the maximum value in max variable.
+
+step 3: initialize missing variable with empty array.
+
+step 4: create for loop and initialize i equal to 1 and execute until i <= max.go to next step.
+
+step 5: check if the i present inside of array or not.if it is not present then push  i value to array.else go to next step.
+
+step 6: execute until for condition fails.if for condition fails then go to next step.else go to step 4.
+
+step 7: print missing variable.
+
+step 8: stop.
+
 ### Pseudocode:
 ```
-
+INIT "use strict";
+array = INPUT
+SET max=Math.max(...array); 
+INIT missing = [];
+FOR ( i -> 1 to max ) 
+  IF (array.indexOf(i) == -1) 
+     missing.push(i);
+  ENDIF
+ENDFOR
+PRINT (missing);
 ```
 ## 10. Write a program for calculating age using Date of birth? (1990)
 ### Algorithm:
@@ -312,7 +400,7 @@ CALCULATE age = current_year - birth_year;
 PRINT (age);
 ```
 ## 11. In the Javascript function, what are the differences between call by value and reference?
-**### call By value**
+### **call By value**
 ### Algorithm:
 step 1: initialize strict mode in globally and variable `a` with input value.
 
@@ -337,7 +425,7 @@ PRINT (a);
 PRINT (b);     
 PRINT (c);     
 ```
-**### call By reference**
+### **call By reference**
 
 ### Algorithm:
 step 1: initialize strict mode in globally and variable `x` with input value.
@@ -438,7 +526,7 @@ ENDFUNCTION multiply
 multiply (INPUT,INPUT);
 ```
 ## 16. List the differences between named function and assigning functions to variable with examples
-**### named function**
+### **named function**
 ### Algorithm:
 step 1: initialize strict mode in globally and variable total = 0.
 
@@ -462,7 +550,7 @@ FUNCTION sum( x, y)
 ENDFUNCTION sum
 sum (INPUT,INPUT);
 ```
-**### assigning functions to variable**
+### **assigning functions to variable**
 ### Algorithm:
 step 1: initialize strict mode in globally and variable total = 0.
 
