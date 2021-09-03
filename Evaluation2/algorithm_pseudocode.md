@@ -3,7 +3,7 @@
 
 step 1: initialize strict mode in globally and variable start and end with input value, create two variable to store typeof input and convert input number to string and assign variable.
 
-step 2:check type of input equal to number and input is not a float value.if it true then go to step 10.else go to step 11.
+step 2:check type of input equal to number and input is not a float value and input greater than 1 and strat less than or equal to end.if it true then go to step 10.else go to step 11.
 
 step 3: create a function definition for prime with parameter s and e.
 
@@ -21,7 +21,7 @@ step 9: if flag equal to true print number.else continue the loop.
 
 step 10: call the prime function with parameter start and end.display the prime number start to end are:.
 
-step 11: display this is not number.go to step 12.
+step 11: display this value not accepted.go to step 12.
 
 step 12: stop
 ### Pseudocode:
@@ -33,11 +33,11 @@ SET start_type = typeof start;
 SET end_type = typeof end;
 SET startConvertToString = start + "";
 SET endConvertToString = end + "";
-IF (start_type === "number" AND startConvertToString.indexOf(".") === -1 AND end_type === "number" AND endConvertToString.indexOf(".") === -1 ) THEN
+IF (start_type === "number" AND startConvertToString.indexOf(".") === -1 AND end_type === "number" AND endConvertToString.indexOf(".") === -1 AND start > 1 AND end > 1 AND start <= end ) THEN
     PRINT  "prime number "+start+" to " +end+ " are : "
     isprime(start,end);
 ELSE
-    PRINT "this is not number";
+    PRINT "this value not accepted";
 ENDIF
 
 FUNCTION isprime( s, e)
@@ -315,35 +315,42 @@ PRINT (Age);
 ## 8. Count Total number of zeros from 1 up to 50
 ### Algorithm:
 
-step 1: initialize strict mode in globally and variable start and end with input value.
+step 1: initialize strict mode in globally and variable start and end with input value, create two variable to store typeof input and convert input number to string and assign variable.
 
-step 2: create function definition for zerocounter with parameter`s` and `e`.
+step 2: check type of input equal to number and input is not a float value. if it true then go to next step. else go to step 8.
 
-step 3: initialize variable count=0.
+step 3: initialize variable count = 0.
 
-step 4: forloop initialize variable i=s to e.
+step 4: forloop initialize variable i=start to end.
 
-step 5: increment count value.when for condition fails.go to next step.
+step 5: initialize variable numberTOString and convert `i` to string.
 
-step 6: print count.
+step 6: using split method split the value of numberToString and if 0 is present then assign corresponted value to count.
 
-step 7: stop.
+step 7: print count.
+
+step 8: display this value not accepted.go to step 12.
+
+step 9: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
 start = INPUT
 end = INPUT
-zerocounter( start, end);
-FUNCTION zerocounter( s, e)
-    INIT count=0;
-    FOR (i -> s to e )
-        CALCULATE ind=i+"";
-        IF (ind.indexOf("0") === 1) THEN
-          INCREMENT count
-        ENDIF
-    PRINT (count);
+SET start_type = TYPEOF start;
+SET end_type = TYPEOF end;
+SET startConvertToString = start + "" ;
+SET endConvertToString = end + "" ;
+IF (start_type === "number" AND end_type === "number" AND startConvertToString.indexOf(".") === -1 AND endConvertToString.indexOf(".") === -1) THEN
+    SET count = 0;
+    FOR (i -> start to end )
+        SET numberToString = i + "" ;
+        CALCULATE count += numberToString.split("0").length - 1;
     ENDFOR
-ENDFUNCTION  zerocounter 
+    PRINT (count);
+ELSE
+    PRINT ("This value not accepted");
+ENDIF
 ```
 ## 9. The following array of numbers show the missing number? ([1,2,3,5,6])
 ### Algorithm:
@@ -367,7 +374,7 @@ step 8: stop.
 ```
 INIT "use strict";
 array = INPUT
-SET max=Math.max(...array); 
+SET max = Math.max(...array); 
 INIT missing = [];
 FOR ( i -> 1 to max ) 
   IF (array.indexOf(i) == -1) 
@@ -519,7 +526,7 @@ step 6: stop.
 ```
 INIT "use strict";
 INIT total = 0;    
-SET multiply = FUNCTION( x, y)
+SET multiply = FUNCTION( x, y ss)
     CALCULATE total = x * y ;
     PRINT (total);
 ENDFUNCTION multiply

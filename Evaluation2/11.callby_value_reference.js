@@ -1,3 +1,4 @@
+"use strict";
 // call By value 
 var a = "javascript";
 var b=a;

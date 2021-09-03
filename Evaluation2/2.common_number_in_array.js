@@ -13,6 +13,6 @@ function commonNumber(array1, array2) {
       }
     }
    console.log(common); 
-  }
+}
 
    

@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 var a = 10;
 function z(){
     var a = 20;
@@ -7,7 +7,6 @@ function z(){
 }
 z();
 console.log(this);
-"use strict";
 //this inside object
 var obj={
     id:10,
