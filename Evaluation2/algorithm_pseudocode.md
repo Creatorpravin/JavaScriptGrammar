@@ -3,7 +3,7 @@
 
 step 1: initialize strict mode in globally and variable start and end with input value, create two variable to store typeof input and convert input number to string and assign variable.
 
-step 2:check type of input equal to number and input is not a float value and input greater than 1 and strat less than or equal to end.if it true then go to step 10.else go to step 11.
+step 2: check type of input equal to number and input is not a float value and input greater than 1 and strat less than or equal to end.if it true then go to step 10.else go to step 11.
 
 step 3: create a function definition for prime with parameter s and e.
 
@@ -21,7 +21,7 @@ step 9: if flag equal to true print number.else continue the loop.
 
 step 10: call the prime function with parameter start and end.display the prime number start to end are:.
 
-step 11: display this value not accepted.go to step 12.
+step 11: display this input value not accepted.go to step 12.
 
 step 12: stop
 ### Pseudocode:
@@ -37,7 +37,7 @@ IF (start_type === "number" AND startConvertToString.indexOf(".") === -1 AND end
     PRINT  "prime number "+start+" to " +end+ " are : "
     isprime(start,end);
 ELSE
-    PRINT "this value not accepted";
+    PRINT "this input value not accepted";
 ENDIF
 
 FUNCTION isprime( s, e)

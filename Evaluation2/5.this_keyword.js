@@ -8,7 +8,7 @@ function z(){
 z();
 console.log(this);
 //this inside object
-var obj={
+var obj = {
     id:10,
     name:"yuvaraj",
     f:function(){

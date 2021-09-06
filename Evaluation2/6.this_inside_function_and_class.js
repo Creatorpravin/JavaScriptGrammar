@@ -7,7 +7,7 @@ var obj = new exampleFunction();
 console.log(obj);
 
 //'this' inside class
-var exampleClass=class{
+var exampleClass = class{
     constructor() {
       return this
     }

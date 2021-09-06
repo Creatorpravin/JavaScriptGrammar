@@ -119,8 +119,8 @@ The return keyword is optional. But function will return anyway once all stateme
 "use strict";
 var total=0;
 sum(10);
-function sum(x,y=20){
-    total=x+y;
+function sum(x,y = 20){
+    total = x + y;
     console.log(total);
 }
 ```
@@ -140,9 +140,9 @@ Anonymous functions are often used as event callbacks, where we usually don’t 
 
 ```javascript
 "use strict";
-var total=0;
+var total = 0;
 var sum = function(x,y){
-    total=x+y;
+    total = x + y;
     console.log(total);
 }
 sum (10,20);
@@ -162,9 +162,9 @@ This makes your code look cleaner.
 
 ```javascript
 "use strict";
-var total=0;
+var total = 0;
 var multiply = function(x,y){
-    total=x*y;
+    total = x * y;
     console.log(total);
 }
 multiply(10,20);
@@ -179,11 +179,11 @@ JavaScript has a built-in directive typeof that we can use before calling the fu
 
 ```javascript
 "use strict";
-var array=[];
+var array = [];
 var f=function(){return "This is function";}
 myfunction(array);     //pass array instead of function
 function myfunction(func){     
-    (typeof func =="function")?console.log(func()):console.log("This is not function");
+    (typeof func == "function")?console.log(func()):console.log("This is not function");
 }    
 ```
 output :
@@ -209,7 +209,7 @@ function z(){
 z();
 console.log(this);
 //this inside object
-var obj={
+var obj = {
     id:10,
     name:"yuvaraj",
     f:function(){
@@ -252,7 +252,7 @@ This keyword is used inside of a class and refers to the current instance.
 ```javascript
 "use strict";
 //'this' inside class
-var exampleClass=class{
+var exampleClass = class{
     constructor() {
       return this;
     }
@@ -290,7 +290,7 @@ map() does not change the original array.
 ```javascript
 "use strict";
 var persons = [20,25,15,30,10];
-var fullAge = persons.map(person => person*18);
+var fullAge = persons.map(person => person * 18);
 console.log(fullAge);
 ```
 output :
@@ -304,7 +304,7 @@ The reduce() method reduces an array of values down to just one value. To get th
 ```javascript
 "use strict";
 var persons = [20,25,15,30,10];
-var fullAge = persons.reduce((person,next) => person+next);
+var fullAge = persons.reduce((person,next) => person + next);
 console.log(fullAge);
 ```
 output :
