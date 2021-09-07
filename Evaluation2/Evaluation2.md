@@ -8,16 +8,8 @@ var start_type = typeof start;
 var end_type = typeof end;
 var startConvertToString = start + "" ;
 var endConvertToString = end + "" ;
-// check if type of value is number or not 
-if(start_type === "number" && startConvertToString.indexOf(".")===-1 && end_type==="number" && endConvertToString.indexOf(".")===-1 && start > 0 && end > 0 && start <= end){
-    console.log("prime number "+start+" to " +end+ " are : ");
-    isprime(start,end);
-}else{
-    console.log("this value not acctepted");
-}
-
-//isprime function
-function isprime(s,e){
+//ListOfPrimeNumber function
+function ListOfPrimeNumber(s,e){
     for(let number = s ; number <= e ; number++ ){ 
         var flag = true; 
         if(number === 1){
@@ -35,6 +27,13 @@ function isprime(s,e){
            console.log(number);  
     }
 }   
+// check if type of value is number or not 
+if(start_type === "number" && startConvertToString.indexOf(".")===-1 && end_type==="number" && endConvertToString.indexOf(".")===-1 && start > 0 && end > 0 && start <= end){
+    console.log("prime number "+start+" to " +end+ " are : ");
+    ListOfPrimeNumber(start,end);
+}else{
+    console.log("this value not acctepted");
+}
 ```
 output :
 ```
@@ -89,12 +88,10 @@ prime number 1 to 200 are :
 ## 2. From two sorted arrays, how would you find the common numbers?
 ```javascript
 "use strict";
-var array1=[1,2,3,4,5];
-var array2=[2,4,8,10,15];
-commonNumber(array1, array2); 
-
+const array1=[1,2,3,4,5];
+const array2=[2,4,8,10,15];
 function commonNumber(array1, array2) {
-    var common = []; 
+    let common = []; 
     for (var i = 0; i < array1.length; i++) {
       for (var j = 0; j < array2.length; j++) {
         if (array1[i] == array2[j]) { 
@@ -104,6 +101,7 @@ function commonNumber(array1, array2) {
     }
    console.log(common); 
 }
+commonNumber(array1, array2); 
 ```
 output :
 ```
@@ -140,12 +138,11 @@ Anonymous functions are often used as event callbacks, where we usually don’t 
 
 ```javascript
 "use strict";
-var total = 0;
-var sum = function(x,y){
+let total = 0;
+(function(x,y){
     total = x + y;
     console.log(total);
-}
-sum (10,20);
+})(10,20);
 ```
 output :
 ```
@@ -173,16 +170,16 @@ output :
 ```
 200
 ```
-## 4. Show an example ofSafegrounding function parameters?
+## 4. Show an example of Safegrounding function parameters?
 The solution is to safeguard the value by checking its type. 
 JavaScript has a built-in directive typeof that we can use before calling the function.
 
 ```javascript
 "use strict";
-var array = [];
-var f=function(){return "This is function";}
-myfunction(array);     //pass array instead of function
-function myfunction(func){     
+let array = [];
+let f = function(){return "This is function";}
+myFunction(array);     //pass array instead of function
+function myFunction(func){     
     (typeof func == "function")?console.log(func()):console.log("This is not function");
 }    
 ```
@@ -271,9 +268,9 @@ The filter() method takes each element in an array and it applies a conditional 
 
 ```javascript
 "use strict";
-var persons = [20,25,15,30,10];
-var fullAge = persons.filter(person => person >= 18);
-console.log(fullAge);
+let personsAge = [20,25,15,30,10];
+let resultAge = personsAge.filter(age => age >= 18);
+console.log(resultAge);
 ```
 output :
 ```
@@ -289,9 +286,9 @@ map() does not execute the function for empty elements.
 map() does not change the original array.
 ```javascript
 "use strict";
-var persons = [20,25,15,30,10];
-var fullAge = persons.map(person => person * 18);
-console.log(fullAge);
+let personsAge = [20,25,15,30,10];
+let resultAge = personsAge.map(age => age * 18);
+console.log(resultAge);
 ```
 output :
 ```
@@ -303,9 +300,9 @@ The reduce() method reduces an array of values down to just one value. To get th
 
 ```javascript
 "use strict";
-var persons = [20,25,15,30,10];
-var fullAge = persons.reduce((person,next) => person + next);
-console.log(fullAge);
+let personsAge = [20,25,15,30,10];
+let resultAge = personsAge.reduce((age,next) => age + next);
+console.log(resultAge);
 ```
 output :
 ```
@@ -314,22 +311,31 @@ output :
 ## 8. Count Total number of zeros from 1 up to 50
 ```javascript
 "use strict";
-var start = 1;
-var end = 50;
-var start_type = typeof start;
-var end_type = typeof end;
-var startConvertToString = start + "" ;
-var endConvertToString = end + "" ;
-if(start_type === "number" && end_type === "number" && startConvertToString.indexOf(".") === -1 && endConvertToString.indexOf(".") === -1){
-    var count = 0;
-    for(let i = start ; i <= end ; i++ ){
-        let numberToString = i + "" ;
-        count += numberToString.split("0").length - 1;
+////give input range find number of zero
+const start = 1;
+const end = 50;
+//get the type of input value and store variable
+const start_type = typeof start;
+const end_type = typeof end;
+//convert input value to string
+const startConvertToString = start + "" ;
+const endConvertToString = end + "" ;
+// check if type of value is number or not 
+if(start_type === "number" && end_type === "number" ){
+   if(startConvertToString.indexOf(".") === -1 && endConvertToString.indexOf(".") === -1){
+        let count = 0;
+        for(let i = start ; i <= end ; i++ ){
+            let numberToString = i + "" ;
+            count += numberToString.split("0").length - 1;
+        }
+        console.log(count);
     }
-    console.log(count);
+    else{
+        console.log("The float value not accepted"); 
+    }
 }
 else{
-    console.log("This value not accepted");
+    console.log("The string value not accepted");
 }
 ```
 output :
@@ -339,9 +345,9 @@ output :
 ## 9. The following array of numbers show the missing number? ([1,2,3,5,6])
 ```javascript
 "use strict";
-var array = [1,2,3,5,6];
-var max = Math.max(...array); 
-var missing = [];
+const array = [1,2,3,5,6];
+const max = Math.max(...array); 
+let missing = [];
 for (var i = 1; i <= max; i++) {
   if (array.indexOf(i) == -1) {
     missing.push(i);
@@ -356,17 +362,30 @@ output:
 ## 10. Write a program for calculating age using Date of birth? (1990)
 ```javascript
 "use strict";
-var birth_year = 1990;
-var type=typeof birth_year;
-var convertToString = birth_year + "" ;
-if(type === "number" && convertToString.indexOf(".") === -1 ){
-var year = new Date();
-var current_year = year.getFullYear();
-var age = current_year - birth_year;
-console.log(age);
+//give the input value
+const birth_year = 1990;
+//get the type of input value and store variable
+const type = typeof birth_year;
+//convert input value to string
+const convertToString = birth_year + "" ;
+//check if type of value is number or not 
+if(type === "number"){
+    if(convertToString.indexOf(".") === -1 ){
+        if(birth_year > 0){
+            let year = new Date();
+            let current_year = year.getFullYear();
+            let age = current_year - birth_year;
+            console.log(age);
+        }else{
+            console.log("The negative value not accepted");
+        }
+    }else{
+        console.log("The float value not accepted");
+    }
 }else{
-    console.log("This value not accepted");
+    console.log("The string value not accepted");
 }
+
 ```
 output :
 ```
@@ -389,9 +408,9 @@ It copies the value of a variable passed in a function to a local variable.
 Both these variables occupy separate locations in memory. Thus, if changes are made in a particular variable it does not affect the other one.
 ```javascript
 "use strict"; 
-var a = "javascript";
-var b=a;
-var c=b;
+let a = "javascript";
+let b=a;
+let c=b;
 a = "html";
 console.log(a);     //html
 console.log(b);     //javascript
@@ -421,9 +440,9 @@ Changes in one object variable affect the other object variable.
 
 ```javascript
 "use strict";
-var x={language:"javascript"};
-var y=x;
-var z=y;
+let x={language:"javascript"};
+let y=x;
+let z=y;
 x.language="html";
 console.log(x);     //{language: "html"}
 console.log(y);     //{language: "html"} 
@@ -442,9 +461,9 @@ You can access function’s arity via Function.length property.
 
 ```javascript
 "use strict";
-var arity=Date.length;
-console.log(arity);
 function Date(day,month,year){}
+let arity=Date.length;
+console.log(arity);
 ```
 output :
 ```
@@ -462,7 +481,7 @@ For example A curried function is a function that takes multiple arguments one a
 
 ```javascript
 "use strict";
-var volume=function(length) {
+let volume=function(length) {
     return function(width) {
        return function(height) {
           return height * width * length;
@@ -470,9 +489,9 @@ var volume=function(length) {
     };
 }
 console.log(volume(11)(2)(3));
-var h=volume(11)(2);
+let h=volume(11)(2);
 h(3);
-var w=volume(11);
+let w=volume(11);
 w(2);
 h(3);
 ```
@@ -526,12 +545,11 @@ anonymous function may be syntactically lighter than using a named function.
 anonymous function needed when function is called in one place in the program.
 ```javascript
 "use strict";
-var total=0;
-var multiply = function(x,y){
-    total=x*y;
+let total = 0;
+(function(x,y){
+    total = x * y;
     console.log(total);
-}
-multiply (10,20);
+})(10,20);
 ```
 output :
 ```

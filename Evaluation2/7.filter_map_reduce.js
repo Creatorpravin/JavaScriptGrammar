@@ -1,12 +1,12 @@
 "use strict";
-var persons = [20,25,15,30,10];
-var fullAge = persons.filter(person => person >= 18);
-console.log(fullAge);
+let personsAge = [20,25,15,30,10];
+let resultAge = personsAge.filter(age => age >= 18);
+console.log(resultAge);
 
-persons = [20,25,15,30,10];
-fullAge = persons.map(person => person * 18);
-console.log(fullAge);
+personsAge = [20,25,15,30,10];
+resultAge = personsAge.map(age => age * 18);
+console.log(resultAge);
 
-persons = [20,25,15,30,10];
-fullAge = persons.reduce((person,next) => person + next);
-console.log(fullAge);
+personsAge = [20,25,15,30,10];
+resultAge = personsAge.reduce((age,next) => age + next);
+console.log(resultAge);

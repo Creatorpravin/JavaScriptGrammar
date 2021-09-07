@@ -8,15 +8,8 @@ var end_type = typeof end;
 //convert input value to string
 var startConvertToString = start + "" ;
 var endConvertToString = end + "" ;
-// check if type of value is number or not 
-if(start_type === "number" && startConvertToString.indexOf(".") === -1 && end_type === "number" && endConvertToString.indexOf(".") === -1 && start > 0 && end > 0 && start <= end){
-    console.log("prime number "+start+" to " +end+ " are : ");
-    isprime(start,end);
-}else{
-    console.log("This input value not acctepted");
-}
-//isprime function
-function isprime(s,e){
+//listOfPrimeNumber function
+function listOfPrimeNumber(s,e){
     for( let number = s ; number <= e ; number++ ){ 
         var flag = true; 
         if( number === 1 ){
@@ -33,7 +26,14 @@ function isprime(s,e){
         if(flag)
            console.log(number);  
     }
-}   
+}  
+// check if type of value is number or not 
+if(start_type === "number" && startConvertToString.indexOf(".") === -1 && end_type === "number" && endConvertToString.indexOf(".") === -1 && start > 0 && end > 0 && start <= end){
+    console.log("prime number "+start+" to " +end+ " are : ");
+    listOfPrimeNumber(start,end);
+}else{
+    console.log("This input value not acctepted");
+} 
 
 
 

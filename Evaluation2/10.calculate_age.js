@@ -1,16 +1,24 @@
 "use strict";
 //give the input value
-var birth_year = 1990;
+const birth_year = 1990;
 //get the type of input value and store variable
-var type = typeof birth_year;
+const type = typeof birth_year;
 //convert input value to string
-var convertToString = birth_year + "" ;
+const convertToString = birth_year + "" ;
 //check if type of value is number or not 
-if(type === "number" && convertToString.indexOf(".") === -1 ){
-    var year = new Date();
-    var current_year = year.getFullYear();
-    var age = current_year - birth_year;
-    console.log(age);
+if(type === "number"){
+    if(convertToString.indexOf(".") === -1 ){
+        if(birth_year > 0){
+            let year = new Date();
+            let current_year = year.getFullYear();
+            let age = current_year - birth_year;
+            console.log(age);
+        }else{
+            console.log("The negative value not accepted");
+        }
+    }else{
+        console.log("The float value not accepted");
+    }
 }else{
-    console.log("This value not accepted");
+    console.log("The string value not accepted");
 }

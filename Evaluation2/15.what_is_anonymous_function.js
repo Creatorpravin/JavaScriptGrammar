@@ -1,7 +1,6 @@
 "use strict";
-var total = 0;
-var multiply = function(x,y){
+let total = 0;
+(function(x,y){
     total = x * y;
     console.log(total);
-}
-multiply (10,20);
+})(10,20);

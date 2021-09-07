@@ -33,14 +33,7 @@ SET start_type = typeof start;
 SET end_type = typeof end;
 SET startConvertToString = start + "";
 SET endConvertToString = end + "";
-IF (start_type === "number" AND startConvertToString.indexOf(".") === -1 AND end_type === "number" AND endConvertToString.indexOf(".") === -1 AND start > 1 AND end > 1 AND start <= end ) THEN
-    PRINT  "prime number "+start+" to " +end+ " are : "
-    isprime(start,end);
-ELSE
-    PRINT "this input value not accepted";
-ENDIF
-
-FUNCTION isprime( s, e)
+FUNCTION listOfPrimeNumber( s, e)
     FOR( number -> s to e ) 
         INIT flag=true; 
         IF( number === 1 ) THEN
@@ -55,7 +48,13 @@ FUNCTION isprime( s, e)
         ENDIF 
         IF (flag) THEN
            PRINT (number); 
-ENDFUNCTION isprime                    
+ENDFUNCTION ListOfPrimeNumber                    
+IF (start_type === "number" AND startConvertToString.indexOf(".") === -1 AND end_type === "number" AND endConvertToString.indexOf(".") === -1 AND start > 1 AND end > 1 AND start <= end ) THEN
+    PRINT  "prime number "+start+" to " +end+ " are : "
+    ListOfPrimeNumber(start,end);
+ELSE
+    PRINT "this input value not accepted";
+ENDIF
 ```
 ## 2. From two sorted arrays, how would you find the common numbers?
 ### Algorithm:
@@ -81,8 +80,6 @@ step 8: stop.
 INIT "use strict";
 array1 = INPUT
 array2 = INPUT
-commonNumber (array1, array2); 
-
 FUNCTION commonNumber (array1, array2) 
     SET common = []; 
     FOR (i -> 0 to array1.length-1) 
@@ -94,6 +91,7 @@ FUNCTION commonNumber (array1, array2)
     ENDFOR       
     PRINT (common);
 FUNCTIONEND commonNumber
+commonNumber (array1, array2); 
 ```
 ## 3. Explain about function Anatomy, Anonymous function and Assigning function to a variable with an example?
 ### **Function Anatomy**
@@ -124,7 +122,7 @@ ENDFUNCTION sum
 ### Algorithm:
 step 1: initialize strict mode in globally and variable total = 0.
 
-step 2: create a function definition for sum with parameter `x` and `y` and store in sum variable.
+step 2: create a function definition for sum with parameter `x` and `y`.
 
 step 3: add the `x` and `y` value and store total variable.
 
@@ -138,11 +136,11 @@ step 6: stop.
 ```
 INIT "use strict";
 INIT total = 0;    
-SET sum = FUNCTION(x,y)
+FUNCTION(x,y)
     CALCULATE total = x + y ;
     PRINT (total);
 ENDFUNCTION sum
-sum (INPUT, INPUT);
+(INPUT, INPUT);
 ```
 ### **Assigning function to a variable**
 ### Algorithm:
@@ -187,10 +185,10 @@ step 5: stop.
 INIT "use strict";
 array = INPUT
 Function = INPUT
-myfunction(array);     
-FUNCTION myfunction(func)
+myFunction(array);     
+FUNCTION myFunction(func)
     (typeof func == "function") ? console.log(func()); : console.log("This is not function");     
-ENDFUNCTION myfunction
+ENDFUNCTION myFunction
 ```
 ## 5. Explain `this` keyword with an example?
 ### Algorithm:
@@ -266,58 +264,58 @@ PRINT (obj);
 ## 7. Difference between map, reduce and filter methods? With an example
 ### **map**
 ### Algorithm:
-step 1: initialize strict mode in globally and array with input value stored variable persons.
+step 1: initialize strict mode in globally and array with input value stored variable personsAge.
 
-step 2: using map method perform multiply and stored in Age variable.
+step 2: using map method perform multiply and stored in ResultAge variable.
 
-step 3: print the Age.
+step 3: print the ResultAge.
 
 step 4: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-persons = INPUT
-SET Age = persons.map(person => person * 10);
-PRINT (fullAge);
+personsAge = INPUT
+SET ResultAge = personsAge.map(age => age * 10);
+PRINT (ResultAge);
 ```
 ### **reduce**
 ### Algorithm:
-step 1: initialize strict mode in globally and array with input value stored variable persons.
+step 1: initialize strict mode in globally and array with input value stored variable personsAge.
 
-step 2: using reduce method perform add the all persons age and stored in Age variable.
+step 2: using reduce method perform add the all persons age and stored in ResultAge variable.
 
-step 3: print the Age.
+step 3: print the ResultAge.
 
 step 4: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-persons = INPUT
-SET Age = persons.reduce((person,next) => person + next);
-PRINT (Age);
+personsAge = INPUT
+SET ResultAge = personsAge.reduce((age,next) => age + next);
+PRINT (ResultAge);
 ```
 ### **filter**
 ### Algorithm:
-step 1: initialize strict mode in globally and array with input value stored variable persons.
+step 1: initialize strict mode in globally and array with input value stored variable personsAge.
 
-step 2: using filter method check whether person age is greater than 18 or not and stored in Age variable.
+step 2: using filter method check whether person age is greater than 18 or not and stored in ResultAge variable.
 
-step 3: print the Age.
+step 3: print the ResultAge.
 
 step 4: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-persons = INPUT
-SET fullAge = persons.filter(person => person >= 18);
-PRINT (Age);
+personsAge = INPUT
+SET ResultAge = personsAge.filter(age => age >= 18);
+PRINT (ResultAge);
 ```
 ## 8. Count Total number of zeros from 1 up to 50
 ### Algorithm:
 
 step 1: initialize strict mode in globally and variable start and end with input value, create two variable to store typeof input and convert input number to string and assign variable.
 
-step 2: check type of input equal to number and input is not a float value. if it true then go to next step. else go to step 8.
+step 2: check type of input equal to number.if it true go to next step.else goto step 9. input is not a float value. if it true then go to next step. else go to step 8.
 
 step 3: initialize variable count = 0.
 
@@ -329,9 +327,11 @@ step 6: using split method split the value of numberToString and if 0 is present
 
 step 7: print count.
 
-step 8: display this value not accepted.go to step 12.
+step 8: display the float value not accepted.go to step 10.
 
-step 9: stop.
+step 9: display the string value not accepted.go to step 10.
+
+step 10: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
@@ -341,15 +341,19 @@ SET start_type = TYPEOF start;
 SET end_type = TYPEOF end;
 SET startConvertToString = start + "" ;
 SET endConvertToString = end + "" ;
-IF (start_type === "number" AND end_type === "number" AND startConvertToString.indexOf(".") === -1 AND endConvertToString.indexOf(".") === -1) THEN
-    SET count = 0;
-    FOR (i -> start to end )
-        SET numberToString = i + "" ;
-        CALCULATE count += numberToString.split("0").length - 1;
-    ENDFOR
-    PRINT (count);
+IF (start_type === "number" AND end_type === "number") THEN
+    IF(startConvertToString.indexOf(".") === -1 AND endConvertToString.indexOf(".") === -1) THEN
+        SET count = 0;
+        FOR (i -> start to end )
+            SET numberToString = i + "" ;
+            CALCULATE count += numberToString.split("0").length - 1;
+        ENDFOR
+        PRINT (count);
+    ELSE
+       PRINT ("This float value not accepted");
+    ENDIF  
 ELSE
-    PRINT ("This value not accepted");
+    PRINT ("This string value not accepted");
 ENDIF
 ```
 ## 9. The following array of numbers show the missing number? ([1,2,3,5,6])
@@ -386,25 +390,53 @@ PRINT (missing);
 ## 10. Write a program for calculating age using Date of birth? (1990)
 ### Algorithm:
 step 1: initialize strict mode in globally and variable birth_year with input value.
+ 
+step 2: check the input value type and store type variable.convert the input value to string and store convertToString variable.
 
-step 2: assign date object to year variable.
+step 3: check if type of input equal to number if it true go to next step.else go to step 12.
 
-step 3: assign year.getFullYear to current_year variable.
+step 4: check if type of input equal to float if it true go to step.else go to next step 11.
 
-step 4: subtract the current year and birth year and store in age variable.
+step 5: check input greater than 0 if it true go to next step.else go to step 10.
 
-step 5: print age.
+step 6: assign date object to year variable.
 
-step 6: stop.
+step 7: assign year.getFullYear to current_year variable.
+
+step 8: subtract the current year and birth year and store in age variable.
+
+step 9: print age.
+
+step 10: display the negative value not accepted.go to step 13.
+
+step 11: display the float value not accepted.go to step 13.
+
+step 12: display the string value not accepted.go to step 13.
+
+step 13: stop.
 
 ### Pseudocode:
 ```
 INIT "use strict";
 birth_year = INPUT
-SET year = new Date();
-SET current_year = year.getFullYear();
-CALCULATE age = current_year - birth_year;
-PRINT (age);
+type = typeof birth_year;
+convertToString = birth_year + "" ;
+IF(type === "number") THEN
+    IF(convertToString.indexOf(".") === -1 )THEN
+        IF(birth_year > 0) THEN
+            SET year = new Date();
+            SET current_year = year.getFullYear();
+            CALCULATE age = current_year - birth_year;
+            PRINT (age);
+        ELSE
+            PRINT ("The negative value not accepted");
+        ENDIF
+    ELSE
+        PRINT ("The float value not accepted");
+    ENDIF
+ELSE
+    PRINT ("The string value not accepted");
+ENDIF
 ```
 ## 11. In the Javascript function, what are the differences between call by value and reference?
 ### **call By value**
@@ -473,12 +505,11 @@ step 5: stop.
 ### Pseudocode:
 ```
 INIT "use strict";
-SET arity = date.length
-PRINT (arity)
-
 FUNCTION date( day, month, year){
 }
 ENDFUNCTION date
+SET arity = date.length
+PRINT (arity)
 ```
 ## 13. What is Currying in Javascript? Explain with a real time example.
 ### Algorithm:
@@ -512,7 +543,7 @@ PRINT (volume (INPUT)(INPUT)(INPUT));
 ### Algorithm:
 step 1: initialize strict mode in globally and variable total = 0.
 
-step 2: create a function definition for multiplication with parameter `x` and `y` and store in multiply variable.
+step 2: create a function definition for multiplication with parameter `x` and `y`.
 
 step 3: multiply the `x` and `y` value and store total variable.
 
@@ -526,11 +557,11 @@ step 6: stop.
 ```
 INIT "use strict";
 INIT total = 0;    
-SET multiply = FUNCTION( x, y ss)
+FUNCTION( x, y ss)
     CALCULATE total = x * y ;
     PRINT (total);
 ENDFUNCTION multiply
-multiply (INPUT,INPUT);
+(INPUT,INPUT);
 ```
 ## 16. List the differences between named function and assigning functions to variable with examples
 ### **named function**

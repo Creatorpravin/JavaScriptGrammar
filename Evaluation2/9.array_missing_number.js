@@ -1,9 +1,9 @@
 "use strict";
-var array = [1,2,3,5,6];
-var max = Math.max(...array); 
-var missing = [];
+const array = [1,2,3,5,6];
+const max = Math.max(...array); 
+let missing = [];
 for (var i = 1; i <= max; i++) {
-  if (array.indexOf(i) == -1) {
+  if (array.indexOf(i) === -1) {
     missing.push(i);
   }
 }
