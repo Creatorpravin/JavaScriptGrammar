@@ -2,16 +2,16 @@
 ```javascript
 "use strict";
 //get the input
-var start = 1;
-var end = 200;
-var start_type = typeof start;
-var end_type = typeof end;
-var startConvertToString = start + "" ;
-var endConvertToString = end + "" ;
+const start = 1;
+const end = 200;
+const start_type = typeof start;
+const end_type = typeof end;
+const startConvertToString = start + "" ;
+const endConvertToString = end + "" ;
 //ListOfPrimeNumber function
 function ListOfPrimeNumber(s,e){
     for(let number = s ; number <= e ; number++ ){ 
-        var flag = true; 
+        let flag = true; 
         if(number === 1){
             flag = false;
         }else{ 

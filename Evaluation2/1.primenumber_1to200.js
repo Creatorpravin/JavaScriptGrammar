@@ -1,17 +1,17 @@
 "use strict";
 //give input range for find prime number
-var start = 1;
-var end = 200;
+const start = 1;
+const end = 200;
 //get the type of input value and store variable
-var start_type = typeof start;
-var end_type = typeof end;
+const start_type = typeof start;
+const end_type = typeof end;
 //convert input value to string
-var startConvertToString = start + "" ;
-var endConvertToString = end + "" ;
+const startConvertToString = start + "" ;
+const endConvertToString = end + "" ;
 //listOfPrimeNumber function
 function listOfPrimeNumber(s,e){
     for( let number = s ; number <= e ; number++ ){ 
-        var flag = true; 
+        let flag = true; 
         if( number === 1 ){
             flag = false;
         }else{ 
