@@ -2,13 +2,10 @@
 //give input range for find prime number
 const start = 1;
 const end = 200;
-//get the type of input value and store variable
-const start_type = typeof start;
-const end_type = typeof end;
 //convert input value to string
 const startConvertToString = start + "" ;
 const endConvertToString = end + "" ;
-//listOfPrimeNumber function
+//listOfPrimeNumber function definition
 function listOfPrimeNumber(s,e){
     for( let number = s ; number <= e ; number++ ){ 
         let flag = true; 
@@ -28,18 +25,22 @@ function listOfPrimeNumber(s,e){
     }
 }  
 // check if type of value is number or not 
-if(start_type === "number" && startConvertToString.indexOf(".") === -1 && end_type === "number" && endConvertToString.indexOf(".") === -1 && start > 0 && end > 0 && start <= end){
-    console.log("prime number "+start+" to " +end+ " are : ");
-    listOfPrimeNumber(start,end);
+if(typeof start === "number" && typeof end === "number"){
+    if(startConvertToString.indexOf(".") === -1 && endConvertToString.indexOf(".") === -1){
+    //if(start.toString().indexOf(".") === -1 && end.toString().indexOf(".") === -1 ){
+        if( start > 0 && end > 0 ){
+            if(start <= end){
+               console.log("Prime numbers between "+ start + " to " + end + " are : ");
+               listOfPrimeNumber(start,end);
+            }else{
+                console.log("The input value range not acctepted");
+            } 
+        }else{
+            console.log("The negative input value not acctepted");
+        } 
+    }else{
+        console.log("The float input value not acctepted");
+    } 
 }else{
-    console.log("This input value not acctepted");
+    console.log("The string input value not acctepted");
 } 
-
-
-
-
-
-    
-
-
-

@@ -1,23 +1,22 @@
 ## 1. Display prime numbers 1 to 200?
 ```javascript
 "use strict";
-//get the input
+//give input range for find prime number
 const start = 1;
 const end = 200;
-const start_type = typeof start;
-const end_type = typeof end;
+//convert input value to string
 const startConvertToString = start + "" ;
 const endConvertToString = end + "" ;
-//ListOfPrimeNumber function
-function ListOfPrimeNumber(s,e){
-    for(let number = s ; number <= e ; number++ ){ 
+//listOfPrimeNumber function definition
+function listOfPrimeNumber(s,e){
+    for( let number = s ; number <= e ; number++ ){ 
         let flag = true; 
-        if(number === 1){
+        if( number === 1 ){
             flag = false;
         }else{ 
         // looping through 2 to number-1
-            for (let i = 2; i < number; i++){
-                if (number % i == 0) {
+            for ( let i = 2; i < number; i++ ){
+                if ( number % i == 0 ) {
                     flag = false;
                     break;
                 }
@@ -26,14 +25,27 @@ function ListOfPrimeNumber(s,e){
         if(flag)
            console.log(number);  
     }
-}   
+}  
 // check if type of value is number or not 
-if(start_type === "number" && startConvertToString.indexOf(".")===-1 && end_type==="number" && endConvertToString.indexOf(".")===-1 && start > 0 && end > 0 && start <= end){
-    console.log("prime number "+start+" to " +end+ " are : ");
-    ListOfPrimeNumber(start,end);
+if(typeof start === "number" && typeof end === "number"){
+    if(startConvertToString.indexOf(".") === -1 && endConvertToString.indexOf(".") === -1){
+    //if(start.toString().indexOf(".") === -1 && end.toString().indexOf(".") === -1 ){
+        if( start > 0 && end > 0 ){
+            if(start <= end){
+               console.log("Prime numbers between "+ start + " to " + end + " are : ");
+               listOfPrimeNumber(start,end);
+            }else{
+                console.log("The input value range not acctepted");
+            } 
+        }else{
+            console.log("The negative input value not acctepted");
+        } 
+    }else{
+        console.log("The float input value not acctepted");
+    } 
 }else{
-    console.log("this value not acctepted");
-}
+    console.log("The string input value not acctepted");
+} 
 ```
 output :
 ```
@@ -88,13 +100,13 @@ prime number 1 to 200 are :
 ## 2. From two sorted arrays, how would you find the common numbers?
 ```javascript
 "use strict";
-const array1=[1,2,3,4,5];
-const array2=[2,4,8,10,15];
+const array1 = [1,2,3,4,5];
+const array2 = [2,4,8,10,15];
 function commonNumber(array1, array2) {
     let common = []; 
-    for (var i = 0; i < array1.length; i++) {
-      for (var j = 0; j < array2.length; j++) {
-        if (array1[i] == array2[j]) { 
+    for (let i = 0; i < array1.length; i++) {
+      for (let j = 0; j < array2.length; j++) {
+        if (array1[i] === array2[j]) { 
           common.push(array1[i]); 
         }
       }
@@ -115,12 +127,12 @@ The function definition consists of the function keyword followed by its name pa
 The return keyword is optional. But function will return anyway once all statements in its body are done executing, even if return keyword is not specified.
 ```javascript
 "use strict";
-var total=0;
-sum(10);
+let total = 0;
 function sum(x,y = 20){
     total = x + y;
     console.log(total);
 }
+sum(10);
 ```
 output :
 ```
@@ -159,8 +171,8 @@ This makes your code look cleaner.
 
 ```javascript
 "use strict";
-var total = 0;
-var multiply = function(x,y){
+let total = 0;
+let multiply = function(x,y){
     total = x * y;
     console.log(total);
 }
@@ -314,14 +326,11 @@ output :
 ////give input range find number of zero
 const start = 1;
 const end = 50;
-//get the type of input value and store variable
-const start_type = typeof start;
-const end_type = typeof end;
 //convert input value to string
 const startConvertToString = start + "" ;
 const endConvertToString = end + "" ;
 // check if type of value is number or not 
-if(start_type === "number" && end_type === "number" ){
+if(typeof start === "number" && typeof end === "number" ){
    if(startConvertToString.indexOf(".") === -1 && endConvertToString.indexOf(".") === -1){
         let count = 0;
         for(let i = start ; i <= end ; i++ ){
@@ -364,12 +373,10 @@ output:
 "use strict";
 //give the input value
 const birth_year = 1990;
-//get the type of input value and store variable
-const type = typeof birth_year;
 //convert input value to string
 const convertToString = birth_year + "" ;
 //check if type of value is number or not 
-if(type === "number"){
+if(typeof birth_year === "number"){
     if(convertToString.indexOf(".") === -1 ){
         if(birth_year > 0){
             let year = new Date();
@@ -566,7 +573,7 @@ named function are useful for a good debugging experience.
 
 ```javascript
 "use strict";
-var total=0;
+let total=0;
 function sum(x,y){
     total=x+y;
     console.log(total);
@@ -587,8 +594,8 @@ assigning function to variable may be syntactically lighter than using a named f
 
 ```javascript
 "use strict";
-var total=0;
-var multiply = function(x,y){
+let total=0;
+let multiply = function(x,y){
     total=x*y;
     console.log(total);
 }

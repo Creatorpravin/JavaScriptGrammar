@@ -7,7 +7,6 @@ a = "html";
 console.log(a);     //html
 console.log(b);     //javascript
 console.log(c);     //javascript
-
 //call by reference
 let x = {language:"javascript"};
 let y = x;

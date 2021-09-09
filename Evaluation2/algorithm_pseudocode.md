@@ -1,36 +1,46 @@
 ## 1. Display prime numbers 1 to 200?
 ### Algorithm:
 
-step 1: initialize strict mode in globally and variable start and end with input value, create two variable to store typeof input and convert input number to string and assign variable.
+step 1: initialize strict mode in globally and variable start and end with input value and convert input number to string and assign to variable.
 
-step 2: check type of input equal to number and input is not a float value and input greater than 1 and strat less than or equal to end.if it true then go to step 10.else go to step 11.
+step 2: check type of input equal to number ,if it is true then go to next step.else go to step 14.
+ 
+step 3: check input is not a float value ,if it is true then go to next step.else go to step 15.
 
-step 3: create a function definition for prime with parameter s and e.
+step 4: chec input greater than 1 ,if it is true then go to next step.else go to step 16.
 
-step 4: create a for loop and assign `s` to number variable,loop execute until number equal to `e`.
+step 5: start less than or equal to end.if it true then go to step 13.else go to step 17.
 
-step 5: inside the loop assign flag = true.go to next step.
+step 6: create a function definition for prime with parameter `s` and `e`.
 
-step 6: check if number equal to 1 then flag = false.else go to next step.
+step 7: create a for loop and assign `s` to number variable,loop execute until number equal to `e`.
 
-step 7: create for loop initialize variable i = 2 .Repeat the steps until i < number. go to next step.
+step 8: inside the loop assign flag = true.go to next step.
 
-step 8: If remainder of number divide `i` equals to 0,then flag equal to false. and break the loop.go to next step.
+step 9: check if number equal to 1 then flag = false.else go to next step.
 
-step 9: if flag equal to true print number.else continue the loop.
+step 10: create for loop initialize variable i = 2 .Repeat the steps until i < number. go to next step.
 
-step 10: call the prime function with parameter start and end.display the prime number start to end are:.
+step 11: If remainder of number divide `i` equals to 0,then flag equal to false. and break the loop.go to next step.
 
-step 11: display this input value not accepted.go to step 12.
+step 12: if flag equal to true print number.else continue the loop.
 
-step 12: stop
+step 13: call the prime function with parameter start and end.display the prime numbers between start to end are:.finish all step go to step 18.
+
+step 14: display The string input value not acctepted.go to step 18.
+
+step 15: display The float input value not acctepted.go to step 18.
+
+step 16: display The negative input value not acctepted.go to step 18.
+
+step 17: display The input value range not acctepted.go to step 18.
+
+step 18: stop
 ### Pseudocode:
 ```
 INIT "use strict";
 start = INPUT;
 end = INPUT;
-SET start_type = typeof start;
-SET end_type = typeof end;
 SET startConvertToString = start + "";
 SET endConvertToString = end + "";
 FUNCTION listOfPrimeNumber( s, e)
@@ -48,12 +58,25 @@ FUNCTION listOfPrimeNumber( s, e)
         ENDIF 
         IF (flag) THEN
            PRINT (number); 
-ENDFUNCTION ListOfPrimeNumber                    
-IF (start_type === "number" AND startConvertToString.indexOf(".") === -1 AND end_type === "number" AND endConvertToString.indexOf(".") === -1 AND start > 1 AND end > 1 AND start <= end ) THEN
-    PRINT  "prime number "+start+" to " +end+ " are : "
-    ListOfPrimeNumber(start,end);
+        ENDIF   
+ENDFUNCTION listOfPrimeNumber                    
+IF(typeof start === "number" && typeof end === "number") THEN
+    IF(startConvertToString.indexOf(".") === -1 && endConvertToString.indexOf(".") === -1) THEN
+        IF( start > 0 && end > 0 ) THEN
+            IF(start <= end) THEN
+               PRINT ("Prime numbers between "+ start + " to " + end + " are : ");
+               listOfPrimeNumber(start,end);
+            ELSE
+                PRINT ("The input value range not acctepted");
+            ENDIF 
+        ELSE
+            PRINT ("The negative input value not acctepted");
+        ENDIF
+    ELSE
+        PRINT("The float input value not acctepted");
+    ENDIF
 ELSE
-    PRINT "this input value not accepted";
+    PRINT ("The string input value not acctepted");
 ENDIF
 ```
 ## 2. From two sorted arrays, how would you find the common numbers?
@@ -73,7 +96,9 @@ step 6: check the array1 value equal to array 2. if it is true then push the arr
 
 step 7: print common variable.
 
-step 8: stop.
+step 8: call the function with parameter value.go to step 3.
+
+step 9: stop.
 
 ### Pseudocode:
 ```
@@ -84,7 +109,7 @@ FUNCTION commonNumber (array1, array2)
     SET common = []; 
     FOR (i -> 0 to array1.length-1) 
       FOR (j -> 0 to array2.length-1)
-        IF (array1[i] == array2[j]) THEN
+        IF (array1[i] === array2[j]) THEN
           common.push(array1[i]);
         ENDIF
       ENDFOR
@@ -112,11 +137,11 @@ step 6: stop.
 ```
 INIT "use strict";
 INIT total = 0;    
-sum (INPUT);
 FUNCTION sum( x, y = INPUT)
     CALCULATE total = x + y ;
     PRINT (total);
 ENDFUNCTION sum
+sum (INPUT);
 ```
 ### **Anonymous function**
 ### Algorithm:

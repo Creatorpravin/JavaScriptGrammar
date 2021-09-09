@@ -1,12 +1,10 @@
 "use strict";
 //give the input value
 const birth_year = 1990;
-//get the type of input value and store variable
-const type = typeof birth_year;
 //convert input value to string
 const convertToString = birth_year + "" ;
 //check if type of value is number or not 
-if(type === "number"){
+if(typeof birth_year === "number"){
     if(convertToString.indexOf(".") === -1 ){
         if(birth_year > 0){
             let year = new Date();

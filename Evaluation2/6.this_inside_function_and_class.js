@@ -5,7 +5,6 @@ var exampleFunction = function () {
 };
 var obj = new exampleFunction();
 console.log(obj);
-
 //'this' inside class
 var exampleClass = class{
     constructor() {
