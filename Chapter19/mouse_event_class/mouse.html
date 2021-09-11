@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Custom UI Project</title>
+        <script type = "module">
+            import {Mouse} from "./mouse.js";
+            //Instantiate global mouse object
+            let mouse = new Mouse();
+            //Ready to use globally in your code
+            mouse.current.x;
+            mouse.current.y;
+            //Last clicked position, relative to document
+            mouse.memory.x;
+            mouse.memory.y;
+            //Drag length
+            mouse.difference.x;
+            mouse.difference.y;
+            //inverse
+            mouse.inverse.x;
+            mouse.inverse.y;
+            //Is mouse button currently held down?(boolean)
+            mouse.dragging;
+        </script>
+    </head>
+    <body></body>
+</html>
