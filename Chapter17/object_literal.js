@@ -15,7 +15,7 @@ cat.sleep = function(amount){
 //wake up
 cat.wakeup = function(){
     this.state = "idle";
-    console.log(`${this.name} woke up. `);
+    console.log(`${this.name} woke up.`);
 }
 
 //Eat until hunger is quenched

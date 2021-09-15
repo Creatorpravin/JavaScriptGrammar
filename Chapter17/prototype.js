@@ -8,7 +8,7 @@ const prototype = {
     }
     
     //wake up
-    wakeup(){
+    wakeup(amount){
         this.state = "idle";
         console.log(`${this.name} woke up. `);
     }
@@ -25,7 +25,7 @@ const prototype = {
     
     //Wandering depletes energy,
     //if necessary, sleep for 5 hours to restore energy
-    wander() {
+    wander(amount) {
         this.state = "wandering";
         console.log(`${this.name} is ${this.state}.`);
         if(--this.energy < 1)
@@ -39,13 +39,12 @@ function Cat( name, hunger, energy, state) {
     cat.hunger = hunger;
     cat.energy = energy;
     cat.state = state;
-
-    cat.sleep=prototype.sleep;
-    cat.wakeup=prototype.wakeup;
-    cat.eat=prototype.eat;
-    cat.wander=prototype.wander;
+    cat.sleep = prototype.sleep;
+    cat.wakeup = prototype.wakeup;
+    cat.eat = prototype.eat;
+    cat.wander = prototype.wander;
   
-     return cat;
+    return cat;
 }
 
 let sam = Cat ("sam", 10, 5, "idle");
@@ -53,7 +52,6 @@ sam.sleep();                            //sam is sleeping.
 sam.wakeup();                           //sam woke up. 
 sam.eat(5);                             //sam is eating 5 units of food.
 sam.wander();                           //sam is wandering.
-
 
 let luna = Cat ("luna", 8, 3, "idle");
 luna.sleep();                           //luna is sleeping.
