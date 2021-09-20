@@ -1,5 +1,231 @@
 # javascript grammer
 ## Table of content
+ ### 1. Presentation Format
+  - #### Creative Communication
+    - #### Theory
+    - #### Color-Coded Diagrams
+    - #### Source code
+    - #### Code close ins
+    
+ ### 2. Chrome Console
+  - #### Beyond Console Log
+  - #### console.dir
+  - #### console.error
+  - #### console.time() and console.timeEnd() 
+  - #### console.clear
+  - #### console.log
+  - #### console.count
+  - #### console.info
+    
+ ### 3. Welcome To Javascript
+  - #### Entry Point
+     - #### DOMContentLoaded
+     - #### readyState
+     - #### Window.onload
+     - #### Including External Scripts
+     - #### Import and Export
+     - #### Importing and Exporting Multiple Definition
+     - #### Dynamic import
+  - #### Strict Mode
+  - #### Literal Values
+  - #### Variables
+  - #### Passing Values By Reference
+  - #### Scope Quirks
+    
+  ### 4. Statements
+   - #### Evaluating Statements
+   - #### Expressions
+        
+  ### 5. Primitive Types
+   - #### boolean
+   - #### null
+   - #### undefined
+   - #### number
+   - #### bigint
+   - #### typeof
+   - #### string
+   - #### Template String
+   - #### Symbol
+   - #### Executing Methods On Primitive Types
+  
+  ### 6. Type Coercion Madness
+   - #### Type Coercion in Constructors 
+   - #### Type Coercion
+   - #### Number and String Arithmetics 
+   - #### Adding Multiple Values
+   - #### Operator Precedence 
+   - #### String To Number Comparison 
+   - #### Other Comparison 
+   - #### Operator Precedence & Associativity Table 
+   - #### L- value and R- value 
+   - #### null vs undefined   
+   
+  ### 7. Scope
+   - #### Variable Definitions
+   - #### Variable Types
+   - #### Scope visibility Difference
+   - #### const and array
+   - #### const and Object Literals 
+    
+  ### 8. Operators
+   - #### Arithmetic
+   - #### Assignment
+   - #### String
+   - #### Comparison
+   - #### Logical
+   - #### Bitwise
+   - #### Typeof
+   - #### Ternary(?:)
+   - #### delete
+   - #### In
+
+  ### 9. ...rest and ...spread
+   - #### Rest Properties
+   - #### Spread Properties
+   - #### Destructuring assignment
+   
+  ### 10. Closure
+   - #### Beautiful closure
+   - #### Initialize closure
+   - #### closing word
+   - #### Arity
+   - #### Currying
+  ### 11. Loops
+   - #### Types of loops in javascript
+   - #### for loop
+   - #### for...of loops
+   - #### for...in loops
+   - #### while loops
+
+  ### 12. Arrays
+   - #### Array.prototype.sort
+   - #### Array.forEach
+   - #### Array.every
+   - #### Array.some
+   - #### Array.filter
+   - #### Array.map
+   - #### Array.reduce
+   - #### Array.flat
+   - #### Array.flatMap
+   - #### string.prototype.matchAll
+   - #### Comparing Two Objects
+   - #### Test Array
+   - #### writing arrcmp
+   - #### improveing objcmp
+        
+  ### 13. Function
+   - #### Function Anatomy
+   - #### Anonymous Function
+   - #### Assigning Function to Variables
+   - #### Function Parameters
+   - #### Checking For Types
+   - #### Safeguarding Funcion Parameters
+   - #### Origin of this Keyword
+        
+  ### 14. Higher-order Function
+   - #### Definition
+   - #### Iterators
+   - #### Calling our custom map Function
+   - #### Calling Array.map Function
+   - #### Array.prototype.filter
+   - #### Array.prototype.reduce
+   
+  ### 15. Arrow Functions
+   - #### return-less return
+   - #### Arrow Function AS Events
+   - #### Without Parantheses
+   - #### Arrow Function Anatomy
+   - #### Arguments
+   - #### Returning From An Arrow Function
+   - #### Similarities between ES-style Functions
+   - #### No this binding
+   - #### No Arguments Object
+   - #### No Constructor
+   - #### Inherired this Context
+
+  ### 16. Creating HTML Elements Dynamically
+   - #### Setting CSS Style 
+   - #### Adding Elements To DOM with .appendChild Method
+   - #### Writing a Function To Create Elements 
+   - #### Creating Objects Using Function Constructor 
+        
+  ### 17. Prototype
+   - #### Prototype On Object Literal
+   - #### Prototype Link
+   - #### Prototype Chain
+   - #### Method Look-Up
+   - #### Array Methods
+   - #### Parenting
+   - #### Extending Your Own Objects
+   - #### Constructor Property
+   - #### Function
+   - #### Prototype In Practice
+   - #### Object Literal
+   - #### Using Function Constructor
+   - #### Prototype
+   - #### Creating Objects Using object.create
+   - #### Back To The Future
+   - #### Constructor Function
+   - #### Along Came new Operator
+   - #### The class Keyword
+
+  ### 18. Object Oriented Programming
+   - #### Polymorphism
+   - #### Class Definitions
+   - #### Inheritance
+   - #### Inheritance in Prototype
+        
+  ### 19. Event
+   - #### Browser Events
+   - #### Synthetic Events
+   - #### Event Anatomy
+   - #### setTimeout
+   - #### setInterval
+   - #### Intercepting Browser Events
+   - #### Display Mouse Position
+   - #### Universal Mouse Event Class
+   - #### Including and Using Mouse Class
+   - #### Mouse class Explained
+        
+  ### 20. Network Requests 
+   - #### Callback Hell
+   - #### Promises
+   - #### Promise.resolve
+   - #### .then
+   - #### .catch
+   - #### .finally
+   - #### Promise.reject
+   - #### Putting It All Together
+   - #### Promise.all
+   - #### Promise Anatomy
+   - #### Final Word
+   - #### Axios
+   - #### Fetch API
+   - #### Fetch POST Payload
+   - #### async/await 
+      - #### await
+      - #### async/await with try-catch
+      - #### Final Word
+   - #### Generator
+      - #### yield 
+      - #### Catching Errors 
+        
+  ### 21. Event Loop 
+   - #### Simple Definition
+        
+  ### 22. Call Stack 
+   - #### How does this apply to writing code 
+   - #### Call Stack Example
+   - #### Execution Context 
+   - #### What is Execution Context 
+   - #### Root Execution Context 
+   - #### Execution Context in Code 
+   - #### Window/Global Scope 
+   - #### The Call Stack 
+   - #### Call Stack & Execution Context Chain 
+   - #### Call, .bind(), .apply() 
+   - #### Stack Overflow
+  
 ## 1. Presentation Format
 
 JavaScript Grammar is not a complete JavaScript reference or manual. The subjects were reduced to only what’s important in modern-day JavaScript environment.
@@ -1556,7 +1782,7 @@ console.log(k);   //[object Object]
         console.log(2<=7);              //true
         ```
 
-   3. Logical:
+   - ### Logical:
 
       Logical operators are used to determine the logic between variables or values.
 
@@ -1569,7 +1795,7 @@ console.log(k);   //[object Object]
         console.log(!true);                 //false
         console.log(!(1==2));               //true
         ```
-   4. Bitwise:
+   - ### Bitwise:
 
         Bit operators work on 32 bits numbers.
 
@@ -1592,7 +1818,7 @@ console.log(k);   //[object Object]
             console.log(5>>>1);                     //2
         ```
 
-   5. typeof:
+   - ### typeof:
 
         The `typeof` operator is used to check the type of a value.
        
@@ -1603,7 +1829,7 @@ console.log(k);   //[object Object]
         console.log(typeof 10n);        //bigint
         console.log(typeof "hi");       //string
         ```
-   6. Ternary (?:)
+   - ### Ternary (?:)
 
         The ternary operator has the form of: statement?statement:statement; Statements can be expressions or a single value:
         ```javascript
@@ -1615,7 +1841,7 @@ console.log(k);   //[object Object]
         console.log(result); 
         ```
         The ternary operator is like an inline if-statement. It does not support {} brackets or multiple statements.
-   7. Delete:
+   - ### Delete:
 
         The `delete` keyword can be used to `delete` an object property.
 
@@ -1630,7 +1856,7 @@ console.log(k);   //[object Object]
         ```
         You cannot use delete to remove stand-alone variables. Even though, if you try to do that, no error will be generated (unless you are in strict mode.)
 
-   8. In:
+   - ### In:
 
        The `in` operator can be used to check if a property name exists in an object:
 
