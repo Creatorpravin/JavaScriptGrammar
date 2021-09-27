@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Event CallBack</title>
+        <script>
+          var clicked = () => {
+              console.log("Document was clicked.");
+              console.log(this);
+            }  
+         document.addEventListener("click",clicked); 
+        </script>
+    </head>
+    <body>
+        <h3>Click the document</h3>
+    </body>
+</html>
